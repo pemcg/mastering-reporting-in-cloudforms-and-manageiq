@@ -14,7 +14,7 @@ The **Configuration Management** folder contains reports for the following categ
 
 #### Virtual Machines
 
-The **Virtual Machines** folder contains the following reports:
+The **Configuration Management/Virtual Machines** folder contains the following reports:
 
 ##### Account Groups - Linux
 
@@ -68,13 +68,13 @@ The **Virtual Machines** folder contains the following reports:
 
 #### Instances
 
-The **Instances** folder contains the following report:
+The **Configuration Management/Instances** folder contains the following report:
 
 ##### Amazon - Active VMs
 
 #### Clusters
 
-The **Clusters** folder contains the following reports:
+The **Configuration Management/Clusters** folder contains the following reports:
 
 ##### Cluster Hosts Affinity
 
@@ -86,7 +86,7 @@ The **Clusters** folder contains the following reports:
 
 #### Storage
 
-The **Storage** folder contains the following reports:
+The **Configuration Management/Storage** folder contains the following reports:
 
 ##### Datastore LUN Information
 
@@ -98,7 +98,7 @@ The **Storage** folder contains the following reports:
 
 #### Hosts
 
-The **Hosts** folder contains the following reports:
+The **Configuration Management/Hosts** folder contains the following reports:
 
 ##### Date brought under Management for Last Week
 
@@ -130,13 +130,13 @@ The **Hosts** folder contains the following reports:
 
 #### VM Folders
 
-The **VM Folders** folder contains the following reports:
+The **Configuration Management/VM Folders** folder contains the following reports:
 
 ##### Folder VMs Relationships
 
 #### Containers
 
-The **Containers** folder contains the following reports:
+The **Configuration Management/Containers** folder contains the following reports:
 
 ##### Images by Failed OpenSCAP Rule Results
 
@@ -168,7 +168,7 @@ The **Containers** folder contains the following reports:
 
 #### Providers
 
-The **Providers** folder contains the following reports:
+The **Configuration Management/Providers** folder contains the following reports:
 
 ##### Monthly Host Count per Provider
 
@@ -182,7 +182,7 @@ The **Providers** folder contains the following reports:
 
 #### Physical Servers
 
-The **Physical Servers** folder contains the following reports:
+The **Configuration Management/Physical Servers** folder contains the following reports:
 
 ##### Physical Server Availability
 
@@ -192,7 +192,7 @@ The **Physical Servers** folder contains the following reports:
 
 #### Resource Pools
 
-The **Resource Pools** folder contains the following report:
+The **Configuration Management/Resource Pools** folder contains the following report:
 
 ##### Resource Pools Summary
 
@@ -202,7 +202,7 @@ The **Performance by Asset Type** folder contains reports for the following cate
 
 #### Virtual Machines
 
-The **Virtual Machines** folder contains the following reports:
+The **Performance by Asset Type/Virtual Machines** folder contains the following reports:
 
 ##### All Departments with Performance
 
@@ -232,7 +232,7 @@ The **Virtual Machines** folder contains the following reports:
 
 #### Clusters
 
-The **Clusters** folder contains the following report:
+The **Performance by Asset Type/Clusters** folder contains the following report:
 
 ##### Cluster Memory and CPU Usage (7 days)
 
@@ -244,7 +244,7 @@ The folder contains reports for the following categories of object:
 
 #### Clusters
 
-The **Clusters** folder contains the following reports:
+The **Trending/Clusters** folder contains the following reports:
 
 ##### Cluster CPU Trends (last week)
 
@@ -256,13 +256,13 @@ The **Clusters** folder contains the following reports:
 
 #### Storage
 
-The **Storage** folder contains the following report:
+The **Trending/Storage** folder contains the following report:
 
 ##### Datastore Capacity Trend over 6 mos.
 
 #### Hosts
 
-The **Hosts** folder contains the following reports:
+The **Trending/Hosts** folder contains the following reports:
 
 ##### Host CPU Trends (last week)
 
@@ -280,13 +280,13 @@ The **Operations** folder contains reports for the following categories of objec
 
 #### Clusters
 
-The **Clusters** folder contains the following report:
+The **Operations/Clusters** folder contains the following report:
 
 ##### Cluster - DRS Migrations
 
 #### EVM
 
-The **EVM** folder contains the following reports:
+The **Operations/EVM** folder contains the following reports:
 
 ##### EVM Server Used IDs Never Used
 
@@ -298,7 +298,7 @@ The **EVM** folder contains the following reports:
 
 #### Virtual Machines
 
-The **Virtual Machines** folder contains the following reports:
+The **Operations/Virtual Machines** folder contains the following reports:
 
 ##### Offline VMs Never Scanned
 
@@ -322,7 +322,7 @@ The **Virtual Machines** folder contains the following reports:
 
 #### Events
 
-The **Events** folder contains the following report:
+The **Operations/Events** folder contains the following report:
 
 VC Snapshot Events by User
 
@@ -332,7 +332,7 @@ The **Relationships** folder contains reports for the following categories of ob
 
 #### Virtual Machines, Folders, Clusters
 
-The **Virtual Machines, Folders, Clusters** folder contains the following reports:
+The **Relationships/Virtual Machines, Folders, Clusters** folder contains the following reports:
 
 ##### Cluster Relationships
 
@@ -346,7 +346,7 @@ The **Migration Readiness** folder contains reports for the following categories
 
 #### Virtual Machines
 
-The **Virtual Machines** folder contains the following reports:
+The **Migration Readiness/Virtual Machines** folder contains the following reports:
 
 ##### Detailed - VMs migration ready
 
@@ -358,17 +358,87 @@ The **Virtual Machines** folder contains the following reports:
 
 ### Events
 
+The **Events** folder contains reports for the following categories of object:
+
+#### Operations
+
+The **Events/Operations** folder contains the following reports:
+
+##### Events for VM prod_webserver
+
+##### Operations VMs Powered On/Off for Last Week
+
+##### Reconfigure Events by Department
+
+##### VC Events initiated by username EVM86
+
+#### Policy
+
+The **Events/Policy** folder contains the following reports:
+
+##### Policy Events for Last Week
+
+##### Policy Events for the Last 7 Days
 
 ### Running Processes
 
+The **Running Processes** folder contains reports for the following categories of object:
+
+#### Virtual Machines
+
+The **Running Processes/Virtual Machines** folder contains the following report:
+
+##### Processes for prod VMs sort by CPU Time
 
 ### Provisioning
 
+The **Provisioning** folder contains reports related to VM provisioning activity. It contains a single subfolder.
+
+#### Activity Reports
+
+The **Provisioning/Activity Reports** folder contains the following reports:
+
+##### Provisioning Activity - by Approver
+
+##### Provisioning Activity - by Datastore
+
+##### Provisioning Activity - by Requester
+
+##### Provisioning Activity - by VM
 
 ### VM Sprawl
 
+The **VM Sprawl** folder contains reports. It contains a single subfolder.
+
+#### Candidates
+
+The **VM Sprawl/Candidates** folder contains the following reports:
+
+##### Summary of VM Create and Deletes
+
+##### VMs pending Retirement
+
+##### VMs Powered Off registered to a Host
+
+##### VMs that are retired
+
+##### VMs with disk free space > 5GB
+
+##### VMs with invalid allocation of RAM
+
+##### VMs with Volume Free Space >= 75%
+
+##### VM Uptime - longest running
 
 ### Tenants
+
+The **Tenants** folder contains a single subfolder
+
+#### Tenant Quotas
+
+The **Tenants/Tenant Quotas** folder contains the following report:
+
+##### Tenant Quotas
 
 
 
