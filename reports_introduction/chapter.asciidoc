@@ -1,0 +1,19 @@
+[[introduction-to-reports]]
+== Introduction to Reports
+
+This book describes the reporting capability of CloudForms and ManageIQ. 
+
+Reports are found under the **Cloud Intel** menu in the WebUI (see screenshot <<i1>>).
+
+[[i1]]
+.Reports Menu
+image::images/screenshot1.png[Screenshot,500,align="center"]
+{zwsp} +
+
+To use the reporting capability the **Reporting** server role must be enabled in the Configuration menu (see screenshot <<i2>>).
+
+
+[[i2]]
+.Reporting Server Role
+image::images/screenshot2.png[Screenshot,500,align="center"]
+{zwsp} +
