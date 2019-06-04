@@ -1,6 +1,7 @@
-== Out-of-the-box Reports
+[[default-reports]]
+== Default Reports
 
-(see screenshot <<i1>>).
+There are over a hundred reports in various categories supplied with CloudForms and ManageIQ. They can be found in the **Reports** section of the accordion (see screenshot <<i1>>).
 
 [[i1]]
 .All Reports
@@ -9,7 +10,21 @@ image::images/screenshot1.png[Screenshot,500,align="center"]
 
 === Report Categories
 
-There are several out-of-the-box report categories, as follows:
+The default report categories are as follows:
+
+* Configuration Management
+* Performance by Asset Type
+* Trending
+* Operations
+* Relationships
+* Migration Readiness
+* Events
+* Running Processes
+* Provisioning
+* VM Sprawl
+* Tenants
+
+The reports in these categories will 
 
 ==== Configuration Management
 
@@ -21,11 +36,71 @@ The **Configuration Management/Virtual Machines** folder contains the following 
 
 ====== Account Groups - Linux
 
+This report list the account groups found in each Linux VM.
+
+[underline]#*Prerequisites*#
+
+A SmartState Analysis should have been run on Linux VMs.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|=======================================================================
+|VM Name|Group Name|Group Comment|Group Account ID|Group Account Type
+|sdsrv0202|systemd-network||192|group
+|=======================================================================
+
 ====== Account Groups - Windows
 
+This report list the account groups found in each Linux VM
+
+[underline]#*Prerequisites*#
+
+A SmartState Analysis should have been run on Windows VMs.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|=======================================================================
+|VM Name|Group Name|Group Comment|Group Account ID|Group Account Type|Group Display Name|Group Domain|Group Enabled|Group Expire|Group Home Directory|	Group Local
+|v2v-win10|IIS_IUSRS|Built-in group used by Internet Information Services.|568|	group||||||
+|=======================================================================
+
 ====== Guest OS HKLM Registry Information
+This report lists the registry data found in Windows VMs.
+
+[underline]#*Prerequisites*#
+
+A SmartState Analysis should have been run on Windows VMs.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|=======================================================================
+|VM Name|Registry Item Name|Registry Item Value Name|Registry Item Data|Registry Item Format|Registry Item Date Created|Registry Item Date Updated
+|windows-server-2008|HKLM\SOFTWARE\Microsoft\Rpc : DCOM Protocols|DCOM Protocols|ncacn_ip_tcp|REG_MULTI_SZ|04/09/19 13:06:04UTC|04/09/19 13:06:04 UTC
+|=======================================================================
 
 ====== Guest OS Information - any OS
+
+This report lists the guest operating systems discovered managed VMs.
+
+[underline]#*Prerequisites*#
+
+A SmartState Analysis should have been run on all VMs.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|=======================================================================
+|Guest OS|OS Service Pack|VM Name|Vendor|OS Name|OS Version|OS Build Numbe|OS Product Key|OS Productid
+|Windows Server 2012 R2 Standard||dev-windows-server-2012|VMware|windows_generic|	6.3|9600|RK6D6-4...-JX...-W...K-KP..B|00..2-0...1-2...2-A...4
+|=======================================================================
+
+[underline]#*Chart*#
+
+The report also generates a pie chart of guest operating systems (see <<i2>>)
+
+[[i2]]
+.Pie Chart of Guest Operating Systems
+image::images/screenshot2.png[Screenshot,500,align="center"]
+{zwsp} +
 
 ====== Guest OS Information - Linux
 
