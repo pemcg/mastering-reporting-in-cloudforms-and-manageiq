@@ -38,9 +38,9 @@ The **Configuration Management/Virtual Machines** folder contains the following 
 
 This report list the account groups found in each Linux VM.
 
-[underline]#*Prerequisites*#
+Prerequisites
 
-A SmartState Analysis should have been run on Linux VMs.
+* A SmartState Analysis should have been run on Linux VMs
 
 .Report Heading and Sample Row
 [options="header",align="center"]
@@ -53,9 +53,9 @@ A SmartState Analysis should have been run on Linux VMs.
 
 This report list the account groups found in each Linux VM
 
-[underline]#*Prerequisites*#
+Prerequisites
 
-A SmartState Analysis should have been run on Windows VMs.
+* A SmartState Analysis should have been run on Windows VMs.
 
 .Report Heading and Sample Row
 [options="header",align="center"]
@@ -65,11 +65,11 @@ A SmartState Analysis should have been run on Windows VMs.
 |=======================================================================
 
 ===== Guest OS HKLM Registry Information
-This report lists the registry data found in Windows VMs.
+This report lists the Windows VM registry data found by SmartState Analysis.
 
-[underline]#*Prerequisites*#
+Prerequisites
 
-A SmartState Analysis should have been run on Windows VMs.
+* A SmartState Analysis should have been run on Windows VMs
 
 .Report Heading and Sample Row
 [options="header",align="center"]
@@ -80,20 +80,18 @@ A SmartState Analysis should have been run on Windows VMs.
 
 ===== Guest OS Information - any OS
 
-This report lists the guest operating systems discovered managed VMs.
+This report lists the guest operating systems discovered on managed VMs.
 
-[underline]#*Prerequisites*#
+Prerequisites
 
-A SmartState Analysis should have been run on all VMs.
+* A SmartState Analysis should have been run on all VMs
 
 .Report Heading and Sample Row
 [options="header",align="center"]
 |=======================================================================
-|Guest OS|OS Service Pack|VM Name|Vendor|OS Name|OS Version|OS Build Numbe|OS Product Key|OS Productid
+|Guest OS|OS Service Pack|VM Name|Vendor|OS Name|OS Version|OS Build Number|OS Product Key|OS Productid
 |Windows Server 2012 R2 Standard||dev-windows-server-2012|VMware|windows_generic|	6.3|9600|RK6D6-4...-JX...-W...K-KP..B|00..2-0...1-2...2-A...4
 |=======================================================================
-
-[underline]#*Chart*#
 
 The report also generates a pie chart of guest operating systems (see <<i2>>)
 
@@ -102,11 +100,66 @@ The report also generates a pie chart of guest operating systems (see <<i2>>)
 image::images/screenshot2.png[Screenshot,500,align="center"]
 {zwsp} +
 
-====== Guest OS Information - Linux
+===== Guest OS Information - Linux
 
-====== Guest OS Information - Windows
+This report lists the guest operating systems discovered on managed Linux VMs.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all Linux VMs
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|=======================================================================
+|VM Name|Product Name
+|env-websrv03|Ubuntu 16.04.3 LTS
+|=======================================================================
+
+===== Guest OS Information - Windows
+
+This report lists the guest operating systems discovered on managed Windows VMs.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all Windows VMs
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|=======================================================================
+|VM Name|Product Name|Service Pack|Version|Build Number|Product Key|Product ID
+|env-win7-tpl|Windows 7 Professional|Service Pack 1|6.1|7601|BKF...|003...
+|=======================================================================
+
+===== Guest OS Password Information - Windows
+
+This report lists the password settings for all managed Windows VMs.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all Windows VMs
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|=======================================================================
+|VM Name|Product Name|Lockout Duration|Lockout Threshold|Max Pw Age|Min Pw Age|Min Pw Len|Pw Complex|	Pw Encrypt|History|Reset Lockout Counter
+|env-win81-ie11|Microsoft Windows 8 (32-bit)|30|0|42|0|0|False|False|0|30
+|=======================================================================
 
 ====== Hardware Information for VMs
+
+This report lists the hardware for all managed VMs.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|=======================================================================
+|Name|RAM|vCPUs|Controller Type|Device Type|Mode|Start Connected?|Disk Size
+|agrasi|2 GB|1|scsi|disk|persistent|True|16 GB
+|=======================================================================
+
 
 ====== Orphaned VMs
 
