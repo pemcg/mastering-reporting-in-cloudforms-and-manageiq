@@ -1,5 +1,5 @@
 [[default-reports]]
-== Default Reports
+= Default Reports
 
 There are over a hundred reports in various categories supplied with CloudForms and ManageIQ. They can be found in the **Reports** section of the accordion (see screenshot <<i1>>).
 
@@ -8,7 +8,7 @@ There are over a hundred reports in various categories supplied with CloudForms 
 image::images/screenshot1.png[Screenshot,500,align="center"]
 {zwsp} +
 
-=== Report Categories
+== Report Categories
 
 The default report categories are as follows:
 
@@ -26,15 +26,15 @@ The default report categories are as follows:
 
 The reports in these categories will 
 
-==== Configuration Management
+=== Configuration Management
 
 The **Configuration Management** folder contains reports for the following categories of object:
 
-===== Virtual Machines
+==== Virtual Machines
 
 The **Configuration Management/Virtual Machines** folder contains the following reports:
 
-====== Account Groups - Linux
+===== Account Groups - Linux
 
 This report list the account groups found in each Linux VM.
 
@@ -49,7 +49,7 @@ A SmartState Analysis should have been run on Linux VMs.
 |sdsrv0202|systemd-network||192|group
 |=======================================================================
 
-====== Account Groups - Windows
+===== Account Groups - Windows
 
 This report list the account groups found in each Linux VM
 
@@ -64,7 +64,7 @@ A SmartState Analysis should have been run on Windows VMs.
 |v2v-win10|IIS_IUSRS|Built-in group used by Internet Information Services.|568|	group||||||
 |=======================================================================
 
-====== Guest OS HKLM Registry Information
+===== Guest OS HKLM Registry Information
 This report lists the registry data found in Windows VMs.
 
 [underline]#*Prerequisites*#
@@ -78,7 +78,7 @@ A SmartState Analysis should have been run on Windows VMs.
 |windows-server-2008|HKLM\SOFTWARE\Microsoft\Rpc : DCOM Protocols|DCOM Protocols|ncacn_ip_tcp|REG_MULTI_SZ|04/09/19 13:06:04UTC|04/09/19 13:06:04 UTC
 |=======================================================================
 
-====== Guest OS Information - any OS
+===== Guest OS Information - any OS
 
 This report lists the guest operating systems discovered managed VMs.
 
