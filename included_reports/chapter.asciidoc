@@ -34,7 +34,7 @@ The **Configuration Management** folder contains reports for the following categ
 
 The **Configuration Management/Virtual Machines** folder contains the following reports:
 
-===== Account Groups - Linux
+===== REPORT - Account Groups - Linux
 
 This report list the account groups found in each Linux VM.
 
@@ -44,12 +44,12 @@ Prerequisites
 
 .Report Heading and Sample Row
 [options="header",align="center"]
-|=======================================================================
+|============================================================
 |VM Name|Group Name|Group Comment|Group Account ID|Group Account Type
 |sdsrv0202|systemd-network||192|group
-|=======================================================================
+|============================================================
 
-===== Account Groups - Windows
+===== REPORT - Account Groups - Windows
 
 This report list the account groups found in each Linux VM
 
@@ -59,12 +59,12 @@ Prerequisites
 
 .Report Heading and Sample Row
 [options="header",align="center"]
-|=======================================================================
+|============================================================
 |VM Name|Group Name|Group Comment|Group Account ID|Group Account Type|Group Display Name|Group Domain|Group Enabled|Group Expire|Group Home Directory|	Group Local
 |v2v-win10|IIS_IUSRS|Built-in group used by Internet Information Services.|568|	group||||||
-|=======================================================================
+|============================================================
 
-===== Guest OS HKLM Registry Information
+===== REPORT - Guest OS HKLM Registry Information
 This report lists the Windows VM registry data found by SmartState Analysis.
 
 Prerequisites
@@ -73,12 +73,12 @@ Prerequisites
 
 .Report Heading and Sample Row
 [options="header",align="center"]
-|=======================================================================
+|============================================================
 |VM Name|Registry Item Name|Registry Item Value Name|Registry Item Data|Registry Item Format|Registry Item Date Created|Registry Item Date Updated
 |windows-server-2008|HKLM\SOFTWARE\Microsoft\Rpc : DCOM Protocols|DCOM Protocols|ncacn_ip_tcp|REG_MULTI_SZ|04/09/19 13:06:04UTC|04/09/19 13:06:04 UTC
-|=======================================================================
+|============================================================
 
-===== Guest OS Information - any OS
+===== REPORT - Guest OS Information - any OS
 
 This report lists the guest operating systems discovered on managed VMs.
 
@@ -88,10 +88,10 @@ Prerequisites
 
 .Report Heading and Sample Row
 [options="header",align="center"]
-|=======================================================================
+|============================================================
 |Guest OS|OS Service Pack|VM Name|Vendor|OS Name|OS Version|OS Build Number|OS Product Key|OS Productid
 |Windows Server 2012 R2 Standard||dev-windows-server-2012|VMware|windows_generic|	6.3|9600|RK6D6-4...-JX...-W...K-KP..B|00..2-0...1-2...2-A...4
-|=======================================================================
+|============================================================
 
 The report also generates a pie chart of guest operating systems (see <<i2>>)
 
@@ -100,7 +100,7 @@ The report also generates a pie chart of guest operating systems (see <<i2>>)
 image::images/screenshot2.png[Screenshot,500,align="center"]
 {zwsp} +
 
-===== Guest OS Information - Linux
+===== REPORT - Guest OS Information - Linux
 
 This report lists the guest operating systems discovered on managed Linux VMs.
 
@@ -110,12 +110,12 @@ Prerequisites
 
 .Report Heading and Sample Row
 [options="header",align="center"]
-|=======================================================================
+|============================================================
 |VM Name|Product Name
 |env-websrv03|Ubuntu 16.04.3 LTS
-|=======================================================================
+|============================================================
 
-===== Guest OS Information - Windows
+===== REPORT - Guest OS Information - Windows
 
 This report lists the guest operating systems discovered on managed Windows VMs.
 
@@ -125,12 +125,12 @@ Prerequisites
 
 .Report Heading and Sample Row
 [options="header",align="center"]
-|=======================================================================
+|============================================================
 |VM Name|Product Name|Service Pack|Version|Build Number|Product Key|Product ID
 |env-win7-tpl|Windows 7 Professional|Service Pack 1|6.1|7601|BKF...|003...
-|=======================================================================
+|============================================================
 
-===== Guest OS Password Information - Windows
+===== REPORT - Guest OS Password Information - Windows
 
 This report lists the password settings for all managed Windows VMs.
 
@@ -140,14 +140,14 @@ Prerequisites
 
 .Report Heading and Sample Row
 [options="header",align="center"]
-|=======================================================================
+|============================================================
 |VM Name|Product Name|Lockout Duration|Lockout Threshold|Max Pw Age|Min Pw Age|Min Pw Len|Pw Complex|	Pw Encrypt|History|Reset Lockout Counter
 |env-win81-ie11|Microsoft Windows 8 (32-bit)|30|0|42|0|0|False|False|0|30
-|=======================================================================
+|============================================================
 
-====== Hardware Information for VMs
+===== REPORT - Hardware Information for VMs
 
-This report lists the hardware for all managed VMs.
+This report lists the hardware for all managed VMs and Instances.
 
 Prerequisites
 
@@ -155,421 +155,523 @@ Prerequisites
 
 .Report Heading and Sample Row
 [options="header",align="center"]
-|=======================================================================
+|============================================================
 |Name|RAM|vCPUs|Controller Type|Device Type|Mode|Start Connected?|Disk Size
-|agrasi|2 GB|1|scsi|disk|persistent|True|16 GB
-|=======================================================================
+|websrv033|2 GB|1|scsi|disk|persistent|True|16 GB
+|============================================================
 
+===== REPORT - Orphaned VMs
 
-====== Orphaned VMs
+This report lists the orphaned VMs in each provider, i.e. VMs that have been deleted from the provider (such as vCenter) but still have a Datastore associated with them 
 
-====== Recently Discovered VMs
+Prerequisites
 
-====== Unregistered VMs
+* None
 
-====== User Accounts - Linux
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Last Known Datastore Path|Last Known Size|Date Created|Date Updated|Annotation
+|e2e-windows-2|data4/96c999e6-b0a0-4154-9d87-7d22cdc1abae.ovf|60 GB|07/13/17 19:11:58 UTC|01/21/19 09:55:29 UTC|Windows AD server
+|============================================================
 
-====== User Accounts - Windows
+===== REPORT - Recently Discovered VMs
 
-====== Vendor and Guest OS
+This report lists managed VMs and Instances sorted in descending order of creation date
 
-====== Vendor and Type
+Prerequisites
 
-====== VM Disk Usage
+* None
 
-====== VM Location and Size
+Notes
 
-====== VMs by MAC Address
+* The default report contains a "Created on Time" column, which seems to be empty. Replacing this with "Date Created" gives more meaningful data.
 
-====== VMs Snapshot Summary
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Vendor Display|Location|Href Slug|Date Created|Description
+|vmselvara-dev-ocp|Amazon|ec2-3-...compute-1.amazonaws.com|instances/1000000007492|05/31/19 21:26:35 UTC|
+|============================================================
 
-====== VMs w/Free Space > 75% by Function
+===== REPORT - Unregistered VMs
 
-====== VMs w/Free Space > 75% by LOB
+This report lists VMs that are not registered to a Host, but have disks on a Datastore.
 
-====== VMs with Free Space > 50% by Department
+Prerequisites
 
-====== VMs with no UUID
+* None
 
-====== VMs with Volume Free Space <= 20%
+Notes
 
-====== VMs with Volume Free Space >= 80%
+* 
 
-====== VM UUIDs
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Datastore|Datastore Path|Size|Date Created|Date Updated|Annotation
+|se-net-util-lab-eng-bit63-net|data4|data4/4a5aee2e-510a-4a8a-92df-9f241e93266a.ovf||07/16/19 10:44:51 UTC|08/02/19 10:36:41 UTC|This VM is used by the Junipers to backup their switch configs upon commit
+|============================================================
 
-===== Instances
+===== REPORT - User Accounts - Linux
+
+This report lists user accounts discovered on Linux VMs
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all Linux VMs
+
+Notes
+
+* 
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|User Name|User Comment|User Account ID|User Account Type
+|============================================================
+
+===== REPORT - User Accounts - Windows
+
+This report lists user accounts discovered on Windows VMs
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all Windows VMs
+
+Notes
+
+* 
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|User Name|User Display Name|User Comment|User Enabled|User Expires|User Account ID|User Account Type|Account Lockout Duration|Account Lockout Threshold|Max Pwd Age|Min Pwd Age|Min Pwd Length|User Domain|User Local
+|============================================================
+
+===== REPORT - Vendor and Guest OS
+
+This report lists Operating System names and versions found on each provider (i.e. vendor).
+
+Prerequisites
+
+* The "OS Name" column will only be populated if a SmartState Analysis has been run on the VM
+
+Notes
+
+* This report provides data for the "Vendor and Guest OS Chart" widget
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Container|OS Product Name|Name|OS Name
+|VMware|Microsoft Windows Server 2008 R2 (64-bit)|dev-windows-server-2008|
+|============================================================
+
+The report also generates a bar chart of guest operating systems (see <<i3>>)
+
+[[i3]]
+.Bar Chart of Guest Operating Systems
+image::images/screenshot3.png[Screenshot,600,align="center"]
+{zwsp} +
+
+===== REPORT - Vendor and Type
+
+===== REPORT - VM Disk Usage
+
+===== REPORT - VM Location and Size
+
+===== REPORT - VMs by MAC Address
+
+===== REPORT - VMs Snapshot Summary
+
+===== REPORT - VMs w/Free Space > 75% by Function
+
+===== REPORT - VMs w/Free Space > 75% by LOB
+
+===== REPORT - VMs with Free Space > 50% by Department
+
+===== REPORT - VMs with no UUID
+
+===== REPORT - VMs with Volume Free Space <= 20%
+
+===== REPORT - VMs with Volume Free Space >= 80%
+
+===== REPORT - VM UUIDs
+
+==== Instances
 
 The **Configuration Management/Instances** folder contains the following report:
 
-====== Amazon - Active VMs
+===== Amazon - Active VMs
 
-===== Clusters
+==== Clusters
 
 The **Configuration Management/Clusters** folder contains the following reports:
 
-====== Cluster Hosts Affinity
+===== REPORT - Cluster Hosts Affinity
 
-====== Cluster Resources
+===== REPORT - Cluster Resources
 
-====== Cluster Summary
+===== REPORT - Cluster Summary
 
-====== Cluster VMs Affinity with Power State
+===== REPORT - Cluster VMs Affinity with Power State
 
-===== Storage
+==== Storage
 
 The **Configuration Management/Storage** folder contains the following reports:
 
-====== Datastore LUN Information
+===== REPORT - Datastore LUN Information
 
-====== Datastores Summary
+===== REPORT - Datastores Summary
 
-====== Datastore Summary for Hosts
+===== REPORT - Datastore Summary for Hosts
 
-====== Datastore Summary for VMs
+===== REPORT - Datastore Summary for VMs
 
-===== Hosts
+==== Hosts
 
 The **Configuration Management/Hosts** folder contains the following reports:
 
-====== Date brought under Management for Last Week
+===== REPORT - Date brought under Management for Last Week
 
-====== Hardware Information
+===== REPORT - Hardware Information
 
-====== Host - ESX Service Console Packages
+===== REPORT - Host - ESX Service Console Packages
 
-====== Host - ESX Services
+===== REPORT - Host - ESX Services
 
-====== Host Network Information
+===== REPORT - Host Network Information
 
-====== Host Patches
+===== REPORT - Host Patches
 
-====== Hosts Summary
+===== REPORT - Hosts Summary
 
-====== Host Storage Adapters
+===== REPORT - Host Storage Adapters
 
-====== Host Summary for VMs
+===== REPORT - Host Summary for VMs
 
-====== Host Summary with VM info
+===== REPORT - Host Summary with VM info
 
-====== Host vLANs and vSwitches
+===== REPORT - Host vLANs and vSwitches
 
-====== Host VM Relationships
+===== REPORT - Host VM Relationships
 
-====== Recently Added Hosts
+===== REPORT - Recently Added Hosts
 
-====== Virtual Infrastructure Platforms
+===== REPORT - Virtual Infrastructure Platforms
 
-===== VM Folders
+==== VM Folders
 
 The **Configuration Management/VM Folders** folder contains the following reports:
 
-====== Folder VMs Relationships
+===== REPORT - Folder VMs Relationships
 
-===== Containers
+==== Containers
 
 The **Configuration Management/Containers** folder contains the following reports:
 
-====== Images by Failed OpenSCAP Rule Results
+===== REPORT - Images by Failed OpenSCAP Rule Results
 
-====== Nodes By Capacity
+===== REPORT - Nodes By Capacity
 
-====== Nodes By CPU Usage
+===== REPORT - Nodes By CPU Usage
 
-====== Nodes By Memory Usage
+===== REPORT - Nodes By Memory Usage
 
-====== Nodes by Number of CPU Cores
+===== REPORT - Nodes by Number of CPU Cores
 
-====== Number of Images per Node
+===== REPORT - Number of Images per Node
 
-====== Pod Counts For Container Images by Project
+===== REPORT - Pod Counts For Container Images by Project
 
-====== Pods per Ready Status
+===== REPORT - Pods per Ready Status
 
-====== Projects By CPU Usage
+===== REPORT - Projects By CPU Usage
 
-====== Projects By Memory Usage
+===== REPORT - Projects By Memory Usage
 
-====== Projects by Number of Containers
+===== REPORT - Projects by Number of Containers
 
-====== Projects by Number of Pods
+===== REPORT - Projects by Number of Pods
 
-====== Projects by Quota Items
+===== REPORT - Projects by Quota Items
 
-====== Recently Discovered Pods
+===== REPORT - Recently Discovered Pods
 
-===== Providers
+==== Providers
 
 The **Configuration Management/Providers** folder contains the following reports:
 
-====== Monthly Host Count per Provider
+===== REPORT - Monthly Host Count per Provider
 
-====== Monthly VM Count per Provider
+===== REPORT - Monthly VM Count per Provider
 
-====== Providers Host Relationships
+===== REPORT - Providers Host Relationships
 
-====== Providers Summary
+===== REPORT - Providers Summary
 
-====== Providers VMs Relationships
+===== REPORT - Providers VMs Relationships
 
-===== Physical Servers
+==== Physical Servers
 
 The **Configuration Management/Physical Servers** folder contains the following reports:
 
-====== Physical Server Availability
+===== REPORT - Physical Server Availability
 
-====== Physical Server Health
+===== REPORT - Physical Server Health
 
-====== Recently Discovered Physical Servers
+===== REPORT - Recently Discovered Physical Servers
 
-===== Resource Pools
+==== Resource Pools
 
 The **Configuration Management/Resource Pools** folder contains the following report:
 
-====== Resource Pools Summary
+===== REPORT - Resource Pools Summary
 
-==== Performance by Asset Type
+=== Performance by Asset Type
 
 The **Performance by Asset Type** folder contains reports for the following categories of object:
 
-===== Virtual Machines
+==== Virtual Machines
 
 The **Performance by Asset Type/Virtual Machines** folder contains the following reports:
 
-====== All Departments with Performance
+===== REPORT - All Departments with Performance
 
-====== Host CPU Usage per VM
+===== REPORT - Host CPU Usage per VM
 
-====== Top CPU Consumers (weekly)
+===== REPORT - Top CPU Consumers (weekly)
 
-====== Top Memory Consumers (weekly)
+===== REPORT - Top Memory Consumers (weekly)
 
-====== Top Storage Consumers
+===== REPORT - Top Storage Consumers
 
-====== VM Performance - daily over the last week
+===== REPORT - VM Performance - daily over the last week
 
-====== VM Resource Utilization
+===== REPORT - VM Resource Utilization
 
-====== VMs with Avg Daily CPU > 85% (past mo.)
+===== REPORT - VMs with Avg Daily CPU > 85% (past mo.)
 
-====== VMs with Avg Daily Mem < 50% (past mo.)
+===== REPORT - VMs with Avg Daily Mem < 50% (past mo.)
 
-====== VMs with Avg Daily Mem > 95% (past mo.)
+===== REPORT - VMs with Avg Daily Mem > 95% (past mo.)
 
-====== VMs with Avg Daily CPU > 85% (past mo.)
+===== REPORT - VMs with Avg Daily CPU > 85% (past mo.)
 
-====== VMs with Avg Daily Mem > 50% (past mo.)
+===== REPORT - VMs with Avg Daily Mem > 50% (past mo.)
 
-====== Weekly Utilization Overview
+===== REPORT - Weekly Utilization Overview
 
-===== Clusters
+==== Clusters
 
 The **Performance by Asset Type/Clusters** folder contains the following report:
 
-====== Cluster Memory and CPU Usage (7 days)
+===== REPORT - Cluster Memory and CPU Usage (7 days)
 
-==== Trending
+=== Trending
 
 The **Trending** report category contains reports
 
 The folder contains reports for the following categories of object:
 
-===== Clusters
+==== Clusters
 
 The **Trending/Clusters** folder contains the following reports:
 
-====== Cluster CPU Trends (last week)
+===== REPORT - Cluster CPU Trends (last week)
 
-====== Cluster I/O Trends (last week)
+===== REPORT - Cluster I/O Trends (last week)
 
-====== Cluster memory trend 6 months
+===== REPORT - Cluster memory trend 6 months
 
-====== Cluster Memory Trends (last week)
+===== REPORT - Cluster Memory Trends (last week)
 
 ===== Storage
 
 The **Trending/Storage** folder contains the following report:
 
-====== Datastore Capacity Trend over 6 mos.
+===== REPORT - Datastore Capacity Trend over 6 mos.
 
 ===== Hosts
 
 The **Trending/Hosts** folder contains the following reports:
 
-====== Host CPU Trends (last week)
+===== REPORT - Host CPU Trends (last week)
 
-====== Host I/O Trends (last week)
+===== REPORT - Host I/O Trends (last week)
 
-====== Host Memory Trends (last week)
+===== REPORT - Host Memory Trends (last week)
 
-====== Host Peak CPU Used Trend over 6 mos.
+===== REPORT - Host Peak CPU Used Trend over 6 mos.
 
-====== Host Peak Memory Used Trends for 6 mos.
+===== REPORT - Host Peak Memory Used Trends for 6 mos.
 
-==== Operations
+=== Operations
 
 The **Operations** folder contains reports for the following categories of object:
 
-===== Clusters
+==== Clusters
 
 The **Operations/Clusters** folder contains the following report:
 
-====== Cluster - DRS Migrations
+===== REPORT - Cluster - DRS Migrations
 
-===== EVM
+==== EVM
 
 The **Operations/EVM** folder contains the following reports:
 
-====== EVM Server Used IDs Never Used
+===== REPORT - EVM Server Used IDs Never Used
 
-====== EVM Server UserID Usage Report
+===== REPORT - EVM Server UserID Usage Report
 
-====== VMs with Consolidate Helper Snapshots
+===== REPORT - VMs with Consolidate Helper Snapshots
 
-====== VMs with EVM Snapshots
+===== REPORT - VMs with EVM Snapshots
 
-===== Virtual Machines
+==== Virtual Machines
 
 The **Operations/Virtual Machines** folder contains the following reports:
 
-====== Offline VMs Never Scanned
+===== REPORT - Offline VMs Never Scanned
 
-====== Offline VMs with Snapshot
+===== REPORT - Offline VMs with Snapshot
 
-====== Online VMs (Powered On)
+===== REPORT - Online VMs (Powered On)
 
-====== Registered VMs by Free Space
+===== REPORT - Registered VMs by Free Space
 
-====== Registered VMs with Free Space <35%
+===== REPORT - Registered VMs with Free Space <35%
 
-====== Unregistered VMs Free Space <35%
+===== REPORT - Unregistered VMs Free Space <35%
 
-====== VMs not Powered On
+===== REPORT - VMs not Powered On
 
-====== VMs with old VMware tools
+===== REPORT - VMs with old VMware tools
 
-====== VMs without VMware tools
+===== REPORT - VMs without VMware tools
 
-====== VMware Tools Versions
-
-===== Events
-
-The **Operations/Events** folder contains the following report:
-
-VC Snapshot Events by User
-
-==== Relationships
-
-The **Relationships** folder contains reports for the following categories of object:
-
-===== Virtual Machines, Folders, Clusters
-
-The **Relationships/Virtual Machines, Folders, Clusters** folder contains the following reports:
-
-====== Cluster Relationships
-
-====== Folder to VMs Relationships
-
-====== VM Relationships
-
-==== Migration Readiness
-
-The **Migration Readiness** folder contains reports for the following categories of object:
-
-===== Virtual Machines
-
-The **Migration Readiness/Virtual Machines** folder contains the following reports:
-
-====== Detailed - VMs migration ready
-
-====== Detailed - VMs NOT migration ready
-
-====== Summary - VMs migration ready
-
-====== Summary - VMs NOT migration ready
+===== REPORT - VMware Tools Versions
 
 ==== Events
 
+The **Operations/Events** folder contains the following report:
+
+===== REPORT - VC Snapshot Events by User
+
+=== Relationships
+
+The **Relationships** folder contains reports for the following categories of object:
+
+==== Virtual Machines, Folders, Clusters
+
+The **Relationships/Virtual Machines, Folders, Clusters** folder contains the following reports:
+
+===== REPORT - Cluster Relationships
+
+===== REPORT - Folder to VMs Relationships
+
+===== REPORT - VM Relationships
+
+=== Migration Readiness
+
+The **Migration Readiness** folder contains reports for the following categories of object:
+
+==== Virtual Machines
+
+The **Migration Readiness/Virtual Machines** folder contains the following reports:
+
+===== REPORT - Detailed - VMs migration ready
+
+===== REPORT - Detailed - VMs NOT migration ready
+
+===== REPORT - Summary - VMs migration ready
+
+===== REPORT - Summary - VMs NOT migration ready
+
+=== Events
+
 The **Events** folder contains reports for the following categories of object:
 
-===== Operations
+==== Operations
 
 The **Events/Operations** folder contains the following reports:
 
-====== Events for VM prod_webserver
+===== REPORT - Events for VM prod_webserver
 
-====== Operations VMs Powered On/Off for Last Week
+===== REPORT - Operations VMs Powered On/Off for Last Week
 
-====== Reconfigure Events by Department
+===== REPORT - Reconfigure Events by Department
 
-====== VC Events initiated by username EVM86
+===== REPORT - VC Events initiated by username EVM86
 
-===== Policy
+=== Policy
 
 The **Events/Policy** folder contains the following reports:
 
-====== Policy Events for Last Week
+===== REPORT - Policy Events for Last Week
 
-====== Policy Events for the Last 7 Days
+===== REPORT - Policy Events for the Last 7 Days
 
-==== Running Processes
+=== Running Processes
 
 The **Running Processes** folder contains reports for the following categories of object:
 
-===== Virtual Machines
+==== Virtual Machines
 
 The **Running Processes/Virtual Machines** folder contains the following report:
 
-====== Processes for prod VMs sort by CPU Time
+===== REPORT - Processes for prod VMs sort by CPU Time
 
-==== Provisioning
+=== Provisioning
 
 The **Provisioning** folder contains reports related to VM provisioning activity. It contains a single subfolder.
 
-===== Activity Reports
+==== Activity Reports
 
 The **Provisioning/Activity Reports** folder contains the following reports:
 
-====== Provisioning Activity - by Approver
+===== REPORT - Provisioning Activity - by Approver
 
-====== Provisioning Activity - by Datastore
+===== REPORT - Provisioning Activity - by Datastore
 
-====== Provisioning Activity - by Requester
+===== REPORT - Provisioning Activity - by Requester
 
-====== Provisioning Activity - by VM
+===== REPORT - Provisioning Activity - by VM
 
-==== VM Sprawl
+=== VM Sprawl
 
 The **VM Sprawl** folder contains reports. It contains a single subfolder.
 
-===== Candidates
+==== Candidates
 
 The **VM Sprawl/Candidates** folder contains the following reports:
 
-====== Summary of VM Create and Deletes
+===== REPORT - Summary of VM Create and Deletes
 
-====== VMs pending Retirement
+===== REPORT - VMs pending Retirement
 
-====== VMs Powered Off registered to a Host
+===== REPORT - VMs Powered Off registered to a Host
 
-====== VMs that are retired
+===== REPORT - VMs that are retired
 
-====== VMs with disk free space > 5GB
+===== REPORT - VMs with disk free space > 5GB
 
-====== VMs with invalid allocation of RAM
+===== REPORT - VMs with invalid allocation of RAM
 
-====== VMs with Volume Free Space >= 75%
+===== REPORT - VMs with Volume Free Space >= 75%
 
-====== VM Uptime - longest running
+===== REPORT - VM Uptime - longest running
 
-==== Tenants
+=== Tenants
 
 The **Tenants** folder contains a single subfolder
 
-===== Tenant Quotas
+==== Tenant Quotas
 
 The **Tenants/Tenant Quotas** folder contains the following report:
 
-====== Tenant Quotas
+===== REPORT - Tenant Quotas
 
 
 
