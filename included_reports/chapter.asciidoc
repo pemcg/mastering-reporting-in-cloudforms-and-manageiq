@@ -211,7 +211,7 @@ Prerequisites
 
 ===== REPORT - User Accounts - Linux
 
-This report lists user accounts discovered on Linux VMs
+This report lists user accounts discovered on Linux VMs.
 
 Prerequisites
 
@@ -226,7 +226,7 @@ Prerequisites
 
 ===== REPORT - User Accounts - Windows
 
-This report lists user accounts discovered on Windows VMs
+This report lists user accounts discovered on Windows VMs.
 
 Prerequisites
 
@@ -245,7 +245,8 @@ This report lists Operating System names and versions found on each provider (i.
 
 Prerequisites
 
-* The "OS Name" column will only be populated if a SmartState Analysis has been run on the VM
+* The "OS Name" column will only be populated if a SmartState Analysis has been run on the VM.
+* The "OS Product Name" column will display the full operating system name (e.g. "CentOS release 5.9 (Final)") if a SmartState Analysis has been run on the VM. Otherwise this column will display the abbreviated name (e.g. "linux_centos")
 
 Notes
 
@@ -277,18 +278,18 @@ Prerequisites
 [options="header",align="center"]
 |============================================================
 |VM Name|Host Name|Container|Hardware Guest OS|Last Smart Analysis
-|Database-01|esx12.bos.bit63.com|VMware|centos7_64|08/14/19 16:03:00 UTC
+|Database-01|esx10.bos.bit63.com|VMware|centos7_64|08/14/19 16:03:00 UTC
 |============================================================
 
 ===== REPORT - VM Disk Usage
 
-This report lists VM disk usage over a time period for each VM
+This report lists VM disk usage over a time period for each VM.
 
 Prerequisites
 
 * This report uses data supplied by Capacity & Utilization, so these server roles must be enabled and running for several days to generate meaninful data
 
-.Report Heading and Sample Row
+.Report Heading and Sample Rows
 [options="header",align="center"]
 |============================================================
 |VM Name|Activity Sample - Timestamp (Day/Time)|Derived Vm Allocated Disk Storage|Derived Vm Used Disk Storage
@@ -303,9 +304,54 @@ Prerequisites
 
 ===== REPORT - VM Location and Size
 
+This report lists the host and datastore location of each VM, along with the total disk size.
+
+Prerequisites
+
+* The "Size" column will only be populated if a SmartState Analysis has been run on the VM
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Host Name|Datastore|Datastore Path|Size|Date Created|Date Updated|Last Smart Analysis
+|big-ip-ve-emea|esx12.bos.bit63.com|datastore12|datastore12/big-ip-ve-emea/big-ip-ve-emea.vmx|18.1 GB|08/14/19 15:03:53 UTC|08/14/19 15:52:06 UTC|08/14/19 15:56:57 UTC
+|============================================================
+
 ===== REPORT - VMs by MAC Address
 
+This report lists the MAC addresses of each VM
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "Device Location" column data is taken from the Hardware.Network Adapters : Location database column, which seems to be rarely populated.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|MAC Address|Device Location|VM Name|Host Name|Datastore|Datastore Path
+|00:50:56:a5:03:b9||hriprdweb002|esx12.bos.bit63.com|NFS_Datastore|NFS_Datastore/hriprdweb002/hriprdweb002.vmx
+|============================================================
+
 ===== REPORT - VMs Snapshot Summary
+
+This report lists any VMs with snapshots, along with the snapshot details.
+
+Prerequisites
+
+* The "Total Size" column will only be populated if a SmartState Analysis has been run on the VM
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Snapshot Name|Active Snapshot (0/1)|Description|Create Time|Total Size
+|tower-cloud-bit63-com|Active VM|1|Active VM|05/29/17 20:19:10 UTC|
+|tower-cloud-bit63t-com|preupgrade=19dec2017|0|preupgrade=19dec2017|12/19/17 15:43:15 UTC|	
+|tower-cloud-bit63-com | Count: 2||||
+|============================================================
 
 ===== REPORT - VMs w/Free Space > 75% by Function
 
