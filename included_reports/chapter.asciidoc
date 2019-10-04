@@ -372,6 +372,7 @@ This report lists VMs with disks containing > 75% free space, sorted by function
 Prerequisites
 
 * VMs should be tagged with the "function (Workload)" category for this report to be meaningful.
+* A SmartState Analysis should have been run on all VMs for this report to contain valid volume data.
 
 .Report Heading and Sample Row
 [options="header",align="center"]
@@ -387,6 +388,7 @@ This report lists VMs with disks containing > 75% free space, sorted by line of 
 Prerequisites
 
 * VMs should be tagged with the "lob (Line of Business)" category for this report to be meaningful.
+* A SmartState Analysis should have been run on all VMs for this report to contain valid volume data.
 
 Notes
 
@@ -406,6 +408,7 @@ This report lists VMs with disks containing > 50% free space, sorted by departme
 Prerequisites
 
 * VMs should be tagged with the "department (Department)" category for this report to be meaningful.
+* A SmartState Analysis should have been run on all VMs for this report to contain valid volume data.
 
 .Report Heading and Sample Row
 [options="header",align="center"]
@@ -439,7 +442,7 @@ This report lists VMs with disks containing <= 20% free space.
 
 Prerequisites
 
-* A SmartState Analysis should have been run on all VMs for this report to contain meaningful information.
+* A SmartState Analysis should have been run on all VMs for this report to contain valid volume data.
 
 .Report Heading and Sample Row
 [options="header",align="center"]
@@ -454,7 +457,7 @@ This report lists VMs with disks containing >= 80% free space.
 
 Prerequisites
 
-* A SmartState Analysis should have been run on all VMs for this report to contain meaningful information.
+* A SmartState Analysis should have been run on all VMs for this report to contain valid volume data.
 
 .Report Heading and Sample Row
 [options="header",align="center"]
@@ -507,9 +510,38 @@ The **Configuration Management/Clusters** folder contains the following reports:
 
 ===== REPORT - Cluster Hosts Affinity
 
+This report shows the relationship between clusters and their hosts for each managed provider.
 
+Prerequisites
+
+* None
+
+Notes
+
+* The "Total CPU Speed" and "Total Memory" columns show the total resource values for the cluster and not the individual hosts
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Cluster|Host Hostname|Total CPU Speed|Total Memory
+|SysEng|se-hyp03.cloud.bit63.com|858.87 GHz|2.5 TB
+|SysEng|se-hyp04.cloud.bit63.com|858.87 GHz|2.5 TB
+|============================================================
 
 ===== REPORT - Cluster Resources
+
+This report shows the total resources for each managed cluster.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Total Number of Physical CPUs|Total Number of Logical CPUs|Aggregate Vm Cpus|CPU Cores Virtual to Real Ratio|Total CPU Speed|Total Memory|Aggregate Vm Memory|Memory Virtual to Real Ratio
+|SysEng|48|448|344|0.80|858.87 GHz|2.5 TB|1.6 TB|0.70
+|============================================================
 
 ===== REPORT - Cluster Summary
 
