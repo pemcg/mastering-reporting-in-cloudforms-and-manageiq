@@ -202,10 +202,6 @@ Prerequisites
 
 * None
 
-Notes
-
-* 
-
 .Report Heading and Sample Row
 [options="header",align="center"]
 |============================================================
@@ -221,14 +217,11 @@ Prerequisites
 
 * A SmartState Analysis should have been run on all Linux VMs
 
-Notes
-
-* 
-
 .Report Heading and Sample Row
 [options="header",align="center"]
 |============================================================
 |VM Name|User Name|User Comment|User Account ID|User Account Type
+|agrasil02|dbus|System message bus|81|user
 |============================================================
 
 ===== REPORT - User Accounts - Windows
@@ -239,14 +232,11 @@ Prerequisites
 
 * A SmartState Analysis should have been run on all Windows VMs
 
-Notes
-
-* 
-
 .Report Heading and Sample Row
 [options="header",align="center"]
 |============================================================
 |VM Name|User Name|User Display Name|User Comment|User Enabled|User Expires|User Account ID|User Account Type|Account Lockout Duration|Account Lockout Threshold|Max Pwd Age|Min Pwd Age|Min Pwd Length|User Domain|User Local
+|env-win81-ie11|IEUser|||True|never|1001|user|30|0|42|0|0|||	
 |============================================================
 
 ===== REPORT - Vendor and Guest OS
@@ -265,7 +255,7 @@ Notes
 [options="header",align="center"]
 |============================================================
 |Container|OS Product Name|Name|OS Name
-|VMware|Microsoft Windows Server 2008 R2 (64-bit)|dev-windows-server-2008|
+|VMware|CentOS Linux release 7.6.1810 (Core)|oracle_db|oracledb.bit63.com
 |============================================================
 
 The report also generates a bar chart of guest operating systems (see <<i3>>)
@@ -277,7 +267,39 @@ image::images/screenshot3.png[Screenshot,600,align="center"]
 
 ===== REPORT - Vendor and Type
 
+This report lists VM hardware guest OS types found on each provider (i.e. vendor).
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Host Name|Container|Hardware Guest OS|Last Smart Analysis
+|Database-01|esx12.bos.bit63.com|VMware|centos7_64|08/14/19 16:03:00 UTC
+|============================================================
+
 ===== REPORT - VM Disk Usage
+
+This report lists VM disk usage over a time period for each VM
+
+Prerequisites
+
+* This report uses data supplied by Capacity & Utilization, so these server roles must be enabled and running for several days to generate meaninful data
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Activity Sample - Timestamp (Day/Time)|Derived Vm Allocated Disk Storage|Derived Vm Used Disk Storage
+|boot.sdh-ocp4.cloud.lab.bit63.com|09/10/2019|50 GB|3,489,660,928.0
+|boot.sdh-ocp4.cloud.lab.bit63.com|09/11/2019|50 GB|4,294,967,296.0
+|boot.sdh-ocp4.cloud.lab.bit63.com|09/12/2019|50 GB|4,542,753,870.8
+|boot.sdh-ocp4.cloud.lab.bit63.com|09/13/2019|50 GB|5,368,709,120.0
+|boot.sdh-ocp4.cloud.lab.bit63.com|Count: 4|||
+|Minimums:||3,489,660,928.0|
+|Maximums:||5,368,709,120.0|
+|============================================================
 
 ===== REPORT - VM Location and Size
 
