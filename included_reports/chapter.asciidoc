@@ -33,6 +33,7 @@ The **Configuration Management** folder contains reports for the following categ
 ==== Virtual Machines
 
 The **Configuration Management/Virtual Machines** folder contains the following reports:
+{zwsp} +
 
 ===== REPORT - Account Groups - Linux
 
@@ -48,7 +49,9 @@ Prerequisites
 |VM Name|Group Name|Group Comment|Group Account ID|Group Account Type
 |sdsrv0202|systemd-network||192|group
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Account Groups - Windows
 
 This report list the account groups found in each Linux VM
@@ -63,7 +66,9 @@ Prerequisites
 |VM Name|Group Name|Group Comment|Group Account ID|Group Account Type|Group Display Name|Group Domain|Group Enabled|Group Expire|Group Home Directory|	Group Local
 |v2v-win10|IIS_IUSRS|Built-in group used by Internet Information Services.|568|	group||||||
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Guest OS HKLM Registry Information
 This report lists the Windows VM registry data found by SmartState Analysis.
 
@@ -77,7 +82,9 @@ Prerequisites
 |VM Name|Registry Item Name|Registry Item Value Name|Registry Item Data|Registry Item Format|Registry Item Date Created|Registry Item Date Updated
 |windows-server-2008|HKLM\SOFTWARE\Microsoft\Rpc : DCOM Protocols|DCOM Protocols|ncacn_ip_tcp|REG_MULTI_SZ|04/09/19 13:06:04UTC|04/09/19 13:06:04 UTC
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Guest OS Information - any OS
 
 This report lists the guest operating systems discovered on managed VMs.
@@ -100,6 +107,7 @@ The report also generates a pie chart of guest operating systems (see <<i2>>)
 image::images/screenshot2.png[Screenshot,500,align="center"]
 {zwsp} +
 
+'''
 ===== REPORT - Guest OS Information - Linux
 
 This report lists the guest operating systems discovered on managed Linux VMs.
@@ -114,7 +122,9 @@ Prerequisites
 |VM Name|Product Name
 |env-websrv03|Ubuntu 16.04.3 LTS
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Guest OS Information - Windows
 
 This report lists the guest operating systems discovered on managed Windows VMs.
@@ -129,7 +139,9 @@ Prerequisites
 |VM Name|Product Name|Service Pack|Version|Build Number|Product Key|Product ID
 |env-win7-tpl|Windows 7 Professional|Service Pack 1|6.1|7601|BKF...|003...
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Guest OS Password Information - Windows
 
 This report lists the password settings for all managed Windows VMs.
@@ -144,7 +156,9 @@ Prerequisites
 |VM Name|Product Name|Lockout Duration|Lockout Threshold|Max Pw Age|Min Pw Age|Min Pw Len|Pw Complex|	Pw Encrypt|History|Reset Lockout Counter
 |env-win81-ie11|Microsoft Windows 8 (32-bit)|30|0|42|0|0|False|False|0|30
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Hardware Information for VMs
 
 This report lists the hardware for all managed VMs and Instances.
@@ -159,7 +173,9 @@ Prerequisites
 |Name|RAM|vCPUs|Controller Type|Device Type|Mode|Start Connected?|Disk Size
 |websrv033|2 GB|1|scsi|disk|persistent|True|16 GB
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Orphaned VMs
 
 This report lists the orphaned VMs in each provider, i.e. VMs that have been deleted from the provider (such as vCenter) but still have a Datastore associated with them 
@@ -174,7 +190,9 @@ Prerequisites
 |VM Name|Last Known Datastore Path|Last Known Size|Date Created|Date Updated|Annotation
 |e2e-windows-2|data4/96c999e6-b0a0-4154-9d87-7d22cdc1abae.ovf|60 GB|07/13/17 19:11:58 UTC|01/21/19 09:55:29 UTC|Windows AD server
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Recently Discovered VMs
 
 This report lists managed VMs and Instances sorted in descending order of creation date
@@ -193,7 +211,9 @@ Notes
 |Name|Vendor Display|Location|Href Slug|Date Created|Description
 |vmselvara-dev-ocp|Amazon|ec2-3-...compute-1.amazonaws.com|instances/1000000007492|05/31/19 21:26:35 UTC|
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Unregistered VMs
 
 This report lists VMs that are not registered to a Host, but have disks on a Datastore.
@@ -208,7 +228,9 @@ Prerequisites
 |VM Name|Datastore|Datastore Path|Size|Date Created|Date Updated|Annotation
 |se-net-util-lab-eng-bit63-net|data4|data4/4a5aee2e-510a-4a8a-92df-9f241e93266a.ovf||07/16/19 10:44:51 UTC|08/02/19 10:36:41 UTC|This VM is used by the Junipers to backup their switch configs upon commit
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - User Accounts - Linux
 
 This report lists user accounts discovered on Linux VMs.
@@ -223,7 +245,9 @@ Prerequisites
 |VM Name|User Name|User Comment|User Account ID|User Account Type
 |agrasil02|dbus|System message bus|81|user
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - User Accounts - Windows
 
 This report lists user accounts discovered on Windows VMs.
@@ -238,7 +262,9 @@ Prerequisites
 |VM Name|User Name|User Display Name|User Comment|User Enabled|User Expires|User Account ID|User Account Type|Account Lockout Duration|Account Lockout Threshold|Max Pwd Age|Min Pwd Age|Min Pwd Length|User Domain|User Local
 |env-win81-ie11|IEUser|||True|never|1001|user|30|0|42|0|0|||	
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Vendor and Guest OS
 
 This report lists Operating System names and versions found on each provider (i.e. vendor).
@@ -270,6 +296,7 @@ The report also generates a bar chart of guest operating systems (see <<i3>>)
 image::images/screenshot3.png[Screenshot,600,align="center"]
 {zwsp} +
 
+'''
 ===== REPORT - Vendor and Type
 
 This report lists VM hardware guest OS types found on each provider (i.e. vendor).
@@ -284,7 +311,9 @@ Prerequisites
 |VM Name|Host Name|Container|Hardware Guest OS|Last Smart Analysis
 |Database-01|esx10.bos.bit63.com|VMware|centos7_64|08/14/19 16:03:00 UTC
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VM Disk Usage
 
 This report lists VM disk usage over a time period for each VM.
@@ -305,7 +334,9 @@ Prerequisites
 |Minimums:||3,489,660,928.0|
 |Maximums:||5,368,709,120.0|
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VM Location and Size
 
 This report lists the host and datastore location of each VM, along with the total disk size.
@@ -324,7 +355,9 @@ Notes
 |VM Name|Host Name|Datastore|Datastore Path|Size|Date Created|Date Updated|Last Smart Analysis
 |big-ip-ve-emea|esx12.bos.bit63.com|datastore12|datastore12/big-ip-ve-emea/big-ip-ve-emea.vmx|18.1 GB|08/14/19 15:03:53 UTC|08/14/19 15:52:06 UTC|08/14/19 15:56:57 UTC
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VMs by MAC Address
 
 This report lists the MAC addresses of each VM
@@ -343,7 +376,9 @@ Notes
 |MAC Address|Device Location|VM Name|Host Name|Datastore|Datastore Path
 |00:50:56:a5:03:b9||hriprdweb002|esx12.bos.bit63.com|NFS_Datastore|NFS_Datastore/hriprdweb002/hriprdweb002.vmx
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VMs Snapshot Summary
 
 This report lists any VMs with snapshots, along with the snapshot details.
@@ -364,7 +399,9 @@ Notes
 |tower-cloud-bit63t-com|preupgrade=19dec2017|0|preupgrade=19dec2017|12/19/17 15:43:15 UTC|	
 |tower-cloud-bit63-com | Count: 2||||
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VMs w/Free Space > 75% by Function
 
 This report lists VMs with disks containing > 75% free space, sorted by function (workload).
@@ -380,7 +417,9 @@ Prerequisites
 |Function|Name|Parent Cluster|Storage Name|Volume Name|Volume Free Space Percent|Volume Free Space|Volume Size|Volume Used Space Percent|Volume Used Space|Volume Filesystem
 |Virtual Infrastructure Management|vCenter Server|V2_Cluster|datastore13|log|71.7%|7.2 GB|10 GB|28.3%|2.8 GB|Ext3
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VMs w/Free Space > 75% by LOB
 
 This report lists VMs with disks containing > 75% free space, sorted by line of business.
@@ -400,7 +439,9 @@ Notes
 |Line of Business|Name|Parent Cluster|Storage Name|Volume Name|Volume Free Space Percent|Volume Free Space|Volume Size|Volume Used Space Percent|Volume Used Space|Volume Filesystem
 |General Insurance|Database-01|V2_Cluster|datastore12|root|93.0%|12.5 GB|13.4 GB|7.0%|964.4 MB|XFS
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VMs with Free Space > 50% by Department
 
 This report lists VMs with disks containing > 50% free space, sorted by department.
@@ -416,7 +457,9 @@ Prerequisites
 |Department Classification|Name|Parent Cluster|Storage Name|Volume Name|Volume Free Space Percent|Volume Free Space|Volume Size|Volume Used Space Percent|Volume Used Space|Volume Filesystem
 |Engineering|dev-windows-server-2012|V2_Cluster|iSCSI_Datastore|C:|79.2%|31.4 GB|39.7 GB|20.8%|8.2 GB|NTFS
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VMs with no UUID
 
 This report lists VMs with no BIOS UUID
@@ -435,7 +478,9 @@ Notes
 |VM Name|Host Name|Datastore|Datastore Path|OS Product Name|VM UUID
 |infra.cnv0.cloud.bit63.com|se-hyp06|data4|data4/effecb88-f081-4d19-8cfd-40314c0e4c54.ovf|rhel_7x64|	
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VMs with Volume Free Space <= 20%
 
 This report lists VMs with disks containing <= 20% free space.
@@ -450,7 +495,9 @@ Prerequisites
 |Name|Parent Cluster|Storage Name|Volume Name|Volume Free Space Percent|Volume Free Space|Volume Size|Volume Used Space Percent|Volume Used Space|Volume Filesystem
 |oracle_db|||root|11.9%|2.1 GB|17.4 GB|88.1%|15.3 GB|XFS
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VMs with Volume Free Space >= 80%
 
 This report lists VMs with disks containing >= 80% free space.
@@ -465,7 +512,9 @@ Prerequisites
 |Name|Parent Cluster|Storage Name|Volume Name|Volume Free Space Percent|Volume Free Space|Volume Size|Volume Used Space Percent|Volume Used Space|Volume Filesystem
 |env-win81-ie11|V2_Cluster|datastore12|C:|90.4%|114.5 GB|126.7 GB|9.6%|12.2 GB|NTFS
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - VM UUIDs
 
 This report lists VMs with their BIOS UUIDs
@@ -484,12 +533,14 @@ Notes
 |VM Name|VM UUID|OS Product Name
 |big-ip-ve-west|42250dcd-e16a-ca58-a67d-4fd816d3c2e0|Microsoft Windows Server 2008 R2 (64-bit)
 |============================================================
+{zwsp} +
 
+'''
 ==== Instances
 
 The **Configuration Management/Instances** folder contains the following report:
 
-===== Amazon - Active VMs
+===== REPORT - Amazon - Active VMs
 
 This report lists all active Amazon instances
 
@@ -527,7 +578,9 @@ Notes
 |SysEng|se-hyp03.cloud.bit63.com|858.87 GHz|2.5 TB
 |SysEng|se-hyp04.cloud.bit63.com|858.87 GHz|2.5 TB
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Cluster Resources
 
 This report shows the total resources for each managed cluster.
@@ -542,10 +595,41 @@ Prerequisites
 |Name|Total Number of Physical CPUs|Total Number of Logical CPUs|Aggregate Vm Cpus|CPU Cores Virtual to Real Ratio|Total CPU Speed|Total Memory|Aggregate Vm Memory|Memory Virtual to Real Ratio
 |SysEng|48|448|344|0.80|858.87 GHz|2.5 TB|1.6 TB|0.70
 |============================================================
+{zwsp} +
 
+'''
 ===== REPORT - Cluster Summary
 
+This report produces a configuration and resource summary for each managed cluster.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Name|DRS Automation Level|DRS Enabled|DRS Migration Threshold|HA Admit Control|HA Enabled|HA Max Failures|Total CPU Speed|	Total Memory|Total Number of Logical CPUs|Total Number of Physical CPUs|Provider Name
+|V2_Cluster|fullyAutomated|False|3|True|False|1|76.61 GHz|255.6 GB|32|4|vCenter
+|SysEng|||||||858.87 GHz|2.5 TB|448|48|RHV
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Cluster VMs Affinity with Power State
+
+This report lists VMs associated with each host in a cluster
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Cluster|Host Name|VM Name|VM Power State
+|V2_Cluster|esx12.bos.bit63.com|james-db-03|off
+|============================================================
 
 ==== Storage
 
