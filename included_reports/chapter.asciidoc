@@ -54,7 +54,7 @@ Prerequisites
 '''
 ===== REPORT - Account Groups - Windows
 
-This report list the account groups found in each Linux VM
+This report list the account groups found in each Linux VM.
 
 Prerequisites
 
@@ -178,7 +178,7 @@ Prerequisites
 '''
 ===== REPORT - Orphaned VMs
 
-This report lists the orphaned VMs in each provider, i.e. VMs that have been deleted from the provider (such as vCenter) but still have a Datastore associated with them 
+This report lists the orphaned VMs in each provider, i.e. VMs that have been deleted from the provider (such as vCenter) but still have an associated Datastore.
 
 Prerequisites
 
@@ -195,7 +195,7 @@ Prerequisites
 '''
 ===== REPORT - Recently Discovered VMs
 
-This report lists managed VMs and Instances sorted in descending order of creation date
+This report lists managed VMs and Instances sorted in descending order of creation date.
 
 Prerequisites
 
@@ -309,7 +309,7 @@ Prerequisites
 [options="header",align="center"]
 |============================================================
 |VM Name|Host Name|Container|Hardware Guest OS|Last Smart Analysis
-|Database-01|esx10.bos.bit63.com|VMware|centos7_64|08/14/19 16:03:00 UTC
+|Database-01|esx10.bit63.com|VMware|centos7_64|08/14/19 16:03:00 UTC
 |============================================================
 {zwsp} +
 
@@ -326,11 +326,11 @@ Prerequisites
 [options="header",align="center"]
 |============================================================
 |VM Name|Activity Sample - Timestamp (Day/Time)|Derived Vm Allocated Disk Storage|Derived Vm Used Disk Storage
-|boot.sdh-ocp4.cloud.lab.bit63.com|09/10/2019|50 GB|3,489,660,928.0
-|boot.sdh-ocp4.cloud.lab.bit63.com|09/11/2019|50 GB|4,294,967,296.0
-|boot.sdh-ocp4.cloud.lab.bit63.com|09/12/2019|50 GB|4,542,753,870.8
-|boot.sdh-ocp4.cloud.lab.bit63.com|09/13/2019|50 GB|5,368,709,120.0
-|boot.sdh-ocp4.cloud.lab.bit63.com|Count: 4|||
+|boot.sdh-ocp4.bit63.com|09/10/2019|50 GB|3,489,660,928.0
+|boot.sdh-ocp4.bit63.com|09/11/2019|50 GB|4,294,967,296.0
+|boot.sdh-ocp4.bit63.com|09/12/2019|50 GB|4,542,753,870.8
+|boot.sdh-ocp4.bit63.com|09/13/2019|50 GB|5,368,709,120.0
+|boot.sdh-ocp4.bit63.com|Count: 4|||
 |Minimums:||3,489,660,928.0|
 |Maximums:||5,368,709,120.0|
 |============================================================
@@ -353,14 +353,14 @@ Notes
 [options="header",align="center"]
 |============================================================
 |VM Name|Host Name|Datastore|Datastore Path|Size|Date Created|Date Updated|Last Smart Analysis
-|big-ip-ve-emea|esx12.bos.bit63.com|datastore12|datastore12/big-ip-ve-emea/big-ip-ve-emea.vmx|18.1 GB|08/14/19 15:03:53 UTC|08/14/19 15:52:06 UTC|08/14/19 15:56:57 UTC
+|big-ip-ve-emea|esx12.bit63.com|datastore12|datastore12/big-ip-ve-emea/big-ip-ve-emea.vmx|18.1 GB|08/14/19 15:03:53 UTC|08/14/19 15:52:06 UTC|08/14/19 15:56:57 UTC
 |============================================================
 {zwsp} +
 
 '''
 ===== REPORT - VMs by MAC Address
 
-This report lists the MAC addresses of each VM
+This report lists the MAC addresses of each VM.
 
 Prerequisites
 
@@ -374,7 +374,7 @@ Notes
 [options="header",align="center"]
 |============================================================
 |MAC Address|Device Location|VM Name|Host Name|Datastore|Datastore Path
-|00:50:56:a5:03:b9||hriprdweb002|esx12.bos.bit63.com|NFS_Datastore|NFS_Datastore/hriprdweb002/hriprdweb002.vmx
+|00:50:56:a5:03:b9||hrweb002|esx12.bit63.com|NFS_Datastore|NFS_Datastore/hrweb002/hriprdweb002.vmx
 |============================================================
 {zwsp} +
 
@@ -395,9 +395,9 @@ Notes
 [options="header",align="center"]
 |============================================================
 |VM Name|Snapshot Name|Active Snapshot (0/1)|Description|Create Time|Total Size
-|tower-cloud-bit63-com|Active VM|1|Active VM|05/29/17 20:19:10 UTC|
-|tower-cloud-bit63t-com|preupgrade=19dec2017|0|preupgrade=19dec2017|12/19/17 15:43:15 UTC|	
-|tower-cloud-bit63-com | Count: 2||||
+|tower-bit63-com|Active VM|1|Active VM|05/29/17 20:19:10 UTC|
+|tower-bit63-com|preupgrade|0|preupgrade|12/19/17 15:43:15 UTC|	
+|tower-bit63-com | Count: 2||||
 |============================================================
 {zwsp} +
 
@@ -462,7 +462,7 @@ Prerequisites
 '''
 ===== REPORT - VMs with no UUID
 
-This report lists VMs with no BIOS UUID
+This report lists VMs with no BIOS UUID.
 
 Prerequisites
 
@@ -476,7 +476,7 @@ Notes
 [options="header",align="center"]
 |============================================================
 |VM Name|Host Name|Datastore|Datastore Path|OS Product Name|VM UUID
-|infra.cnv0.cloud.bit63.com|se-hyp06|data4|data4/effecb88-f081-4d19-8cfd-40314c0e4c54.ovf|rhel_7x64|	
+|infra.cnv0.bit63.com|se-hyp06|data4|data4/effecb88-f081-4d19-8cfd-40314c0e4c54.ovf|rhel_7x64|	
 |============================================================
 {zwsp} +
 
@@ -517,7 +517,7 @@ Prerequisites
 '''
 ===== REPORT - VM UUIDs
 
-This report lists VMs with their BIOS UUIDs
+This report lists VMs with their BIOS UUIDs.
 
 Prerequisites
 
@@ -542,7 +542,7 @@ The **Configuration Management/Instances** folder contains the following report:
 
 ===== REPORT - Amazon - Active VMs
 
-This report lists all active Amazon instances
+This report lists all active Amazon instances.
 
 Prerequisites
 
@@ -554,7 +554,9 @@ Prerequisites
 |Name|Flavor Name|Cloud/Infrastructure Provider Name|Availability Zone Name|Security Group Name|Power State
 |pemcg-k8s|t2.large|e2e|us-east-1d|default|on
 |============================================================
+{zwsp} +
 
+'''
 ==== Clusters
 
 The **Configuration Management/Clusters** folder contains the following reports:
@@ -575,8 +577,8 @@ Notes
 [options="header",align="center"]
 |============================================================
 |Cluster|Host Hostname|Total CPU Speed|Total Memory
-|SysEng|se-hyp03.cloud.bit63.com|858.87 GHz|2.5 TB
-|SysEng|se-hyp04.cloud.bit63.com|858.87 GHz|2.5 TB
+|SysEng|se-hyp03.bit63.com|858.87 GHz|2.5 TB
+|SysEng|se-hyp04.bit63.com|858.87 GHz|2.5 TB
 |============================================================
 {zwsp} +
 
@@ -618,7 +620,62 @@ Prerequisites
 '''
 ===== REPORT - Cluster VMs Affinity with Power State
 
-This report lists VMs associated with each host in a cluster
+This report lists VMs associated with each host in a cluster, and their power state.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Cluster|Host Name|VM Name|VM Power State
+|V2_Cluster|esx12.bit63.com|james-db-03|off
+|============================================================
+{zwsp} +
+
+'''
+==== Storage
+
+The **Configuration Management/Storage** folder contains the following reports:
+
+===== REPORT - Datastore LUN Information
+
+This report lists the storage device LUNs that make up each datastore.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Datastore Name|LUN Canonical Name|LUN UUID|LUN Device Name|LUN ID|LUN Capacity|LUN Device Type|LUN Type|LUN Block|LUN Block Size
+|iSCSI_Datastore|naa.6481716774bf8e49eda2c5cb56cc0c47||	/vmfs/devices/disks/naa.6481716774bf8e49eda2c5cb56cc0c47|0|300 MB|disk|disk|600 MB|512
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Datastores Summary
+
+This report shows a summary of the datastores in each provider.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Datastore Name|Number of Hosts|Number of VMs|Total Space|Free Space|Type
+|data4|25|131|8 TB|2.1 TB|ISCSI
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Datastore Summary for Hosts
+
+This report shows a summary of the VMFS datastores and their host connectivity in each provider.
 
 Prerequisites
 
@@ -627,36 +684,139 @@ Prerequisites
 .Report Heading and Sample Rows
 [options="header",align="center"]
 |============================================================
-|Cluster|Host Name|VM Name|VM Power State
-|V2_Cluster|esx12.bos.bit63.com|james-db-03|off
+|Datastore Name|Host Name|Store Type|Free Space|Total Space
+|datastore13|esx13.bit63.com|VMFS|153.6 GB|550.8 GB
+|datastore13|Count: 1|||
+|iSCSI_Datastore|esx12.bit63.com|VMFS|81.3 GB|299.8 GB
+|iSCSI_Datastore|esx13.bit63.com|VMFS|81.3 GB|299.8 GB
+|iSCSI_Datastore|Count: 2|||
 |============================================================
+{zwsp} +
 
-==== Storage
-
-The **Configuration Management/Storage** folder contains the following reports:
-
-===== REPORT - Datastore LUN Information
-
-===== REPORT - Datastores Summary
-
-===== REPORT - Datastore Summary for Hosts
-
+'''
 ===== REPORT - Datastore Summary for VMs
 
+This report lists the VMs residing on each datastore.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "VM Size" column will only be populated if a SmartState Analysis has been run on the VM.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Datastore|VM Name|VM Size|Datastore Size|Datastore Free Space|Datastore Type
+|datastore12|james-db-03|16 GB|550.8 GB|60.2 GB|VMFS
+|============================================================
+{zwsp} +
+
+'''
 ==== Hosts
 
 The **Configuration Management/Hosts** folder contains the following reports:
 
 ===== REPORT - Date brought under Management for Last Week
 
+This report lists any hosts (hypervisors) that have been added to the provider in the last week.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "VC User Name" column seems to refer to a host attribute that no longer exists, so this will be blank.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|Hostname|Date Added|VC User Name
+|se-hyp30|se-hyp30.bit63.com|09/16/19 10:44:50 UTC|	
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Hardware Information
 
+This report lists the hardware information for each host (hypervisor).
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|IP Address|Hardware Manufacturer|Hardware CPU Type|Hardware Model|Hardware CPU Speed|Hardware Logical Cpus|Hardware Cores Per Socket|Hardware RAM|Hardware Number Of Nics|Serial Number
+|se-hyp06|10.2.3.4|Dell Inc.|Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz|PowerEdge M630|2.52 GHz|16|8|125.5 GB|16|8K4Y..
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Host - ESX Service Console Packages
 
+This report lists the service console packages found on each VMware ESX host (hypervisor).
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all ESX hosts
+
+Notes
+
+* This report is only applicable to VMware ESX (not ESXi) host types
+
+.Report Heading
+[options="header",align="center"]
+|============================================================
+|Name|Guest Application Type Name|Guest Application Name|Guest Application Version|Guest Application Description|Guest Application Arch|Guest Application V Unique Name
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Host - ESX Services
 
+This report lists the services found on each VMware ESX host (hypervisor).
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all VMware ESX and ESXi hosts
+
+Notes
+
+* This report is only applicable to VMware ESX and ESXi host types
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Service Name|Service Display Name|Service Running
+|esx12.bit63.com|DCUI|Direct Console UI|True
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Host Network Information
 
+This report lists the networks found on each host (hypervisor).
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Network IP Address|Network Subnet Mask|Network DHCP Enabled|Network DHCP Server|Network DNS Server|Network Default Gateway|Network Description|Network Domain|Network Lease Expires|Network Lease Obtained
+|esx12.bit63.com|10.2.3.4|255.255.255.128|False||||vmnic4|||		
+|esx12.bit63.com|172.31.2.12|255.255.0.0|False||||vmnic1|||		
+|esx12.bit63.com|192.168.49.12|255.255.255.0|False||||vmnic3|||
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Host Patches
 
 ===== REPORT - Hosts Summary
