@@ -872,14 +872,103 @@ image::images/screenshot5.png[Screenshot,700,align="center"]
 '''
 ===== REPORT - Host Storage Adapters
 
+This report lists the storage adapters found on each host.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Host Name|IP Address|Storage Adapter Model|Storage Adapter Controller Type|Storage Adapter Device Name|Storage Adapter Device Type|Storage Adapter Location|Storage Adapter Iscsi Alias|Storage Adapter Iscsi Name|Storage Adapter Present|Storage Adapter Start Connected
+|esx12.bit63.com|10.2.3.4|Dell PERC H330 Mini (blade)||vmhba0|storage|0000:02:00.0|||True|True
+|esx12.bit63.com|10.2.3.4|Wellsburg AHCI Controller|Block|vmhba1|storage|0000:00:11.4|||True|True
+|esx12.bit63.com|10.2.3.4|iSCSI Software Adapter|iSCSI|vmhba64|storage|N/A||	iqn.1998-01.com.vmware:esx12-0734efc0|True|True
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Host Summary for VMs
 
+This report lists all hosts with their running VMs, along with placement and retirement details.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|IP Address|VM Name|VM OS Name|Power State|Parent Datacenter|Parent Folder|Parent Resource Pool|VM is a Template|Retired?|VM Retires On
+|esx12.bit63.com|10.2.3.4|big-ip-ve-east|windows_generic|V2-DC|Datacenters|Default for Cluster / Deployment Role|V2_Cluster|False||
+|...||||||||||
+|esx12.bit63.com|Count: 109|||||||||
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Host Summary with VM info
 
+This report lists all hosts with their running VMs, along with configuration details.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|Name|Power State|Hardware Number of Virtual CPUs|Hardware RAM
+|esx12.bit63.com|env-win2016-tpl|on|1|8 GB
+|...||||
+|esx12.bit63.com|Count: 109|||
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Host vLANs and vSwitches
 
+This report lists all hosts with their vLANs and vSwitches.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Name|Hostname|vLAN Name|vLAN Tag|vSwitch Name|vSwitch Ports|Provider Name
+|esx12.bit63.com|esx12.bit63.com|VM_10G_Network|209|vDS-1|120|IMS vCenter
+|se-hyp01|se-hyp1.bit63.com|e2e|183|ovirtmgmt||RHV
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Host VM Relationships
 
+This report lists all hosts with their VMs and storage requirements.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "Size" column will only be populated if a SmartState Analysis has been run on the VM.
+* The "Power State" column relies on a VM being tagged with managed/power_state, otherwise this column is empty.
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Host|VM Name|RAM|Size|Power State
+|esx12.bit63|Database-01|2 GB|57 GB|
+|...||||
+|esx12.bit63.com|Count: 109|||||
+|============================================================
+{zwsp} +
+
+'''
 ===== REPORT - Recently Added Hosts
 
 ===== REPORT - Virtual Infrastructure Platforms
