@@ -1,0 +1,81 @@
+[[storage]]
+== Storage
+
+The **Configuration Management/Storage** folder contains the following reports:
+
+=== Datastore LUN Information
+
+This report lists the storage device LUNs that make up each datastore.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Datastore Name|LUN Canonical Name|LUN UUID|LUN Device Name|LUN ID|LUN Capacity|LUN Device Type|LUN Type|LUN Block|LUN Block Size
+|iSCSI_Datastore|naa.648171...||	/vmfs/devices/disks/naa.648171...|0|300 MB|disk|disk|600 MB|512
+|============================================================
+{zwsp} +
+
+'''
+=== Datastores Summary
+
+This report shows a summary of the datastores in each provider.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Datastore Name|Number of Hosts|Number of VMs|Total Space|Free Space|Type
+|data4|25|131|8 TB|2.1 TB|ISCSI
+|============================================================
+{zwsp} +
+
+'''
+=== Datastore Summary for Hosts
+
+This report shows a summary of the VMFS datastores and their host connectivity in each provider.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Datastore Name|Host Name|Store Type|Free Space|Total Space
+|datastore13|esx13.bit63.com|VMFS|153.6 GB|550.8 GB
+|datastore13|Count: 1|||
+|iSCSI_Datastore|esx12.bit63.com|VMFS|81.3 GB|299.8 GB
+|iSCSI_Datastore|esx13.bit63.com|VMFS|81.3 GB|299.8 GB
+|iSCSI_Datastore|Count: 2|||
+|============================================================
+{zwsp} +
+
+'''
+=== Datastore Summary for VMs
+
+This report lists the VMs residing on each datastore.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "VM Size" column will only be populated if a SmartState Analysis has been run on the VM.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Datastore|VM Name|VM Size|Datastore Size|Datastore Free Space|Datastore Type
+|datastore12|james-db-03|16 GB|550.8 GB|60.2 GB|VMFS
+|============================================================
+{zwsp} +
+
+'''

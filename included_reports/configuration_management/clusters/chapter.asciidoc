@@ -1,0 +1,79 @@
+[[clusters]]
+== Clusters
+
+The **Configuration Management/Clusters** folder contains the following reports:
+
+=== Cluster Hosts Affinity
+
+This report shows the relationship between clusters and their hosts for each managed provider.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "Total CPU Speed" and "Total Memory" columns show the total resource values for the cluster and not the individual hosts
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Cluster|Host Hostname|Total CPU Speed|Total Memory
+|SysEng|se-hyp03.bit63.com|858.87 GHz|2.5 TB
+|SysEng|se-hyp04.bit63.com|858.87 GHz|2.5 TB
+|============================================================
+{zwsp} +
+
+'''
+=== Cluster Resources
+
+This report shows the total resources for each managed cluster.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Total Number of Physical CPUs|Total Number of Logical CPUs|Aggregate Vm Cpus|CPU Cores Virtual to Real Ratio|Total CPU Speed|Total Memory|Aggregate Vm Memory|Memory Virtual to Real Ratio
+|SysEng|48|448|344|0.80|858.87 GHz|2.5 TB|1.6 TB|0.70
+|============================================================
+{zwsp} +
+
+'''
+=== Cluster Summary
+
+This report produces a configuration and resource summary for each managed cluster.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Name|DRS Automation Level|DRS Enabled|DRS Migration Threshold|HA Admit Control|HA Enabled|HA Max Failures|Total CPU Speed|	Total Memory|Total Number of Logical CPUs|Total Number of Physical CPUs|Provider Name
+|V2_Cluster|fullyAutomated|False|3|True|False|1|76.61 GHz|255.6 GB|32|4|vCenter
+|SysEng|||||||858.87 GHz|2.5 TB|448|48|RHV
+|============================================================
+{zwsp} +
+
+'''
+=== Cluster VMs Affinity with Power State
+
+This report lists VMs associated with each host in a cluster, and their power state.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Cluster|Host Name|VM Name|VM Power State
+|V2_Cluster|esx12.bit63.com|james-db-03|off
+|============================================================
+{zwsp} +
+
+'''

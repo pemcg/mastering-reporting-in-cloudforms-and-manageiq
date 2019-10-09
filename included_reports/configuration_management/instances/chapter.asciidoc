@@ -1,0 +1,22 @@
+[[instances]]
+== Instances
+
+The **Configuration Management/Instances** folder contains the following report:
+
+=== Amazon - Active VMs
+
+This report lists all active Amazon instances.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Flavor Name|Cloud/Infrastructure Provider Name|Availability Zone Name|Security Group Name|Power State
+|pemcg-k8s|t2.large|e2e|us-east-1d|default|on
+|============================================================
+{zwsp} +
+
+'''

@@ -1,0 +1,270 @@
+[[hosts]]
+== Hosts
+
+The **Configuration Management/Hosts** folder contains the following reports:
+
+=== Date brought under Management for Last Week
+
+This report lists any hosts (hypervisors) that have been added to the provider in the last week.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "VC User Name" column seems to refer to a host attribute that no longer exists, so this will be blank.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|Hostname|Date Added|VC User Name
+|se-hyp30|se-hyp30.bit63.com|09/16/19 10:44:50 UTC|	
+|============================================================
+{zwsp} +
+
+'''
+=== Hardware Information
+
+This report lists the hardware information for each host (hypervisor).
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|IP Address|Hardware Manufacturer|Hardware CPU Type|Hardware Model|Hardware CPU Speed|Hardware Logical Cpus|Hardware Cores Per Socket|Hardware RAM|Hardware Number Of Nics|Serial Number
+|se-hyp06|10.2.3.4|Dell Inc.|Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz|PowerEdge M630|2.52 GHz|16|8|125.5 GB|16|8K4Y..
+|============================================================
+{zwsp} +
+
+'''
+=== Host - ESX Service Console Packages
+
+This report lists the service console packages found on each VMware ESX host.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all ESX hosts
+
+Notes
+
+* This report is only applicable to VMware ESX (not ESXi) host types
+
+.Report Heading
+[options="header",align="center"]
+|============================================================
+|Name|Guest Application Type Name|Guest Application Name|Guest Application Version|Guest Application Description|Guest Application Arch|Guest Application V Unique Name
+|============================================================
+{zwsp} +
+
+'''
+=== Host - ESX Services
+
+This report lists the services found on each VMware ESX host.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all VMware ESX and ESXi hosts
+
+Notes
+
+* This report is only applicable to VMware ESX and ESXi host types
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Service Name|Service Display Name|Service Running
+|esx12.bit63.com|DCUI|Direct Console UI|True
+|============================================================
+{zwsp} +
+
+'''
+=== Host Network Information
+
+This report lists the networks found on each host (hypervisor).
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Name|Network IP Address|Network Subnet Mask|Network DHCP Enabled|Network DHCP Server|Network DNS Server|Network Default Gateway|Network Description|Network Domain|Network Lease Expires|Network Lease Obtained
+|esx12.bit63.com|10.2.3.4|255.255.255.128|False||||vmnic4|||		
+|esx12.bit63.com|172.31.2.12|255.255.0.0|False||||vmnic1|||		
+|esx12.bit63.com|192.168.49.12|255.255.255.0|False||||vmnic3|||
+|============================================================
+{zwsp} +
+
+'''
+=== Host Patches
+
+This report lists the patches found on each VMware ESX(i) host.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all ESX(i) hosts
+
+Notes
+
+* This report is only applicable to VMware ESX and ESXi host types
+
+.Report Heading
+[options="header",align="center"]
+|============================================================
+|Name|Patch Name|Patch Description|Patch Installed On
+|============================================================
+{zwsp} +
+
+'''
+=== Hosts Summary
+
+This report lists the software version of each host.
+
+Prerequisites
+
+* None
+
+Notes
+
+* This report provides data for the "Hosts - Summary by Version" widget.
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Host Name|Primary IP Address|VMM Vendor|VMM Product|VMM Version|VMM Build Number
+|esx13.bit63.com|10.2.3.5|VMware|ESXi|6.5.0|5969303
+|se-hyp22|10.19.8.2|RedHat|rhel|7.6|
+|============================================================
+
+The report also generates a bar chart of host software versions (see <<i5>>)
+
+[[i5]]
+.Bar Chart of Host Software Versions
+image::images/screenshot5.png[Screenshot,700,align="center"]
+
+{zwsp} +
+
+'''
+=== Host Storage Adapters
+
+This report lists the storage adapters found on each host.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Host Name|IP Address|Storage Adapter Model|Storage Adapter Controller Type|Storage Adapter Device Name|Storage Adapter Device Type|Storage Adapter Location|Storage Adapter Iscsi Alias|Storage Adapter Iscsi Name|Storage Adapter Present|Storage Adapter Start Connected
+|esx12.bit63.com|10.2.3.4|Dell PERC H330 Mini (blade)||vmhba0|storage|0000:02:00.0|||True|True
+|esx12.bit63.com|10.2.3.4|Wellsburg AHCI Controller|Block|vmhba1|storage|0000:00:11.4|||True|True
+|esx12.bit63.com|10.2.3.4|iSCSI Software Adapter|iSCSI|vmhba64|storage|N/A||	iqn.1998-01.com.vmware:esx12-0734efc0|True|True
+|============================================================
+{zwsp} +
+
+'''
+=== Host Summary for VMs
+
+This report lists all hosts with their running VMs, along with placement and retirement details.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|IP Address|VM Name|VM OS Name|Power State|Parent Datacenter|Parent Folder|Parent Resource Pool|VM is a Template|Retired?|VM Retires On
+|esx12.bit63.com|10.2.3.4|big-ip-ve-east|windows_generic|V2-DC|Datacenters|Default for Cluster / Deployment Role|V2_Cluster|False||
+|...||||||||||
+|esx12.bit63.com|Count: 109|||||||||
+|============================================================
+{zwsp} +
+
+'''
+=== Host Summary with VM info
+
+This report lists all hosts with their running VMs, along with configuration details.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|Name|Power State|Hardware Number of Virtual CPUs|Hardware RAM
+|esx12.bit63.com|env-win2016-tpl|on|1|8 GB
+|...||||
+|esx12.bit63.com|Count: 109|||
+|============================================================
+{zwsp} +
+
+'''
+=== Host vLANs and vSwitches
+
+This report lists all hosts with their vLANs and vSwitches.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Name|Hostname|vLAN Name|vLAN Tag|vSwitch Name|vSwitch Ports|Provider Name
+|esx12.bit63.com|esx12.bit63.com|VM_10G_Network|209|vDS-1|120|vCenter
+|se-hyp01|se-hyp1.bit63.com|e2e|183|ovirtmgmt||RHV
+|============================================================
+{zwsp} +
+
+'''
+=== Host VM Relationships
+
+This report lists all hosts with their VMs and storage requirements.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "Size" column will only be populated if a SmartState Analysis has been run on the VM.
+* The "Power State" column relies on a VM being tagged with managed/power_state, otherwise this column is empty.
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Host|VM Name|RAM|Size|Power State
+|esx12.bit63|Database-01|2 GB|57 GB|
+|...||||
+|esx12.bit63.com|Count: 109|||||
+|============================================================
+{zwsp} +
+
+'''
+=== Recently Added Hosts
+
+This report lists all hosts with the date of their discovery by CloudForms, with the most recently added first.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Name|Date Created|Hostname|Vmm Vendor Display|Href Slug
+|esx12.bit63.com|04/09/19 11:55:06 UTC|esx12.bit63.com|VMware|hosts/2
+|============================================================
+{zwsp} +
+
+'''
+=== Virtual Infrastructure Platforms
+
