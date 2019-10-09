@@ -1,0 +1,1306 @@
+[[default-reports]]
+= Default Reports
+
+There are over a hundred reports in various categories supplied with CloudForms and ManageIQ. They can be found in the **Reports** section of the accordion (see screenshot <<i1>>).
+
+[[i1]]
+.All Reports
+image::images/screenshot1.png[Screenshot,500,align="center"]
+{zwsp} +
+
+== Report Categories
+
+The default report categories are as follows:
+
+* Configuration Management
+* Performance by Asset Type
+* Trending
+* Operations
+* Relationships
+* Migration Readiness
+* Events
+* Running Processes
+* Provisioning
+* VM Sprawl
+* Tenants
+
+The reports in these categories will 
+
+=== Configuration Management
+
+The **Configuration Management** folder contains reports for the following categories of object:
+
+==== Virtual Machines
+
+The **Configuration Management/Virtual Machines** folder contains the following reports:
+{zwsp} +
+
+===== REPORT - Account Groups - Linux
+
+This report list the account groups found in each Linux VM.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on Linux VMs
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Group Name|Group Comment|Group Account ID|Group Account Type
+|sdsrv0202|systemd-network||192|group
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Account Groups - Windows
+
+This report list the account groups found in each Linux VM.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on Windows VMs.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Group Name|Group Comment|Group Account ID|Group Account Type|Group Display Name|Group Domain|Group Enabled|Group Expire|Group Home Directory|	Group Local
+|v2v-win10|IIS_IUSRS|Built-in group used by Internet Information Services.|568|	group||||||
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Guest OS HKLM Registry Information
+This report lists the Windows VM registry data found by SmartState Analysis.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on Windows VMs
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Registry Item Name|Registry Item Value Name|Registry Item Data|Registry Item Format|Registry Item Date Created|Registry Item Date Updated
+|windows-server-2008|HKLM\SOFTWARE\Microsoft\Rpc : DCOM Protocols|DCOM Protocols|ncacn_ip_tcp|REG_MULTI_SZ|04/09/19 13:06:04UTC|04/09/19 13:06:04 UTC
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Guest OS Information - any OS
+
+This report lists the guest operating systems discovered on managed VMs.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all VMs
+
+Notes
+
+* This report provides data for the "Guest OS Information" widget.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Guest OS|OS Service Pack|VM Name|Vendor|OS Name|OS Version|OS Build Number|OS Product Key|OS Productid
+|Windows Server 2012 R2 Standard||dev-windows-server-2012|VMware|windows_generic|	6.3|9600|RK6D6-4...-JX...-W...K-KP..B|00..2-0...1-2...2-A...4
+|============================================================
+
+The report also generates a pie chart of guest operating systems (see <<i2>>)
+
+[[i2]]
+.Pie Chart of Guest Operating Systems
+image::images/screenshot2.png[Screenshot,500,align="center"]
+{zwsp} +
+
+'''
+===== REPORT - Guest OS Information - Linux
+
+This report lists the guest operating systems discovered on managed Linux VMs.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all Linux VMs
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Product Name
+|env-websrv03|Ubuntu 16.04.3 LTS
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Guest OS Information - Windows
+
+This report lists the guest operating systems discovered on managed Windows VMs.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all Windows VMs
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Product Name|Service Pack|Version|Build Number|Product Key|Product ID
+|env-win7-tpl|Windows 7 Professional|Service Pack 1|6.1|7601|BKF...|003...
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Guest OS Password Information - Windows
+
+This report lists the password settings for all managed Windows VMs.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all Windows VMs
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Product Name|Lockout Duration|Lockout Threshold|Max Pw Age|Min Pw Age|Min Pw Len|Pw Complex|	Pw Encrypt|History|Reset Lockout Counter
+|env-win81-ie11|Microsoft Windows 8 (32-bit)|30|0|42|0|0|False|False|0|30
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Hardware Information for VMs
+
+This report lists the hardware for all managed VMs and Instances.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|RAM|vCPUs|Controller Type|Device Type|Mode|Start Connected?|Disk Size
+|websrv033|2 GB|1|scsi|disk|persistent|True|16 GB
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Orphaned VMs
+
+This report lists the orphaned VMs in each provider, i.e. VMs that have been deleted from the provider (such as vCenter) but still have an associated Datastore.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Last Known Datastore Path|Last Known Size|Date Created|Date Updated|Annotation
+|e2e-windows-2|data4/96c999e6-b0a0-4154-9d87-7d22cdc1abae.ovf|60 GB|07/13/17 19:11:58 UTC|01/21/19 09:55:29 UTC|Windows AD server
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Recently Discovered VMs
+
+This report lists managed VMs and Instances sorted in descending order of creation date.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The default report contains a "Created on Time" column, which seems to be empty. Replacing this with "Date Created" gives more meaningful data.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Vendor Display|Location|Href Slug|Date Created|Description
+|vmselvara-dev-ocp|Amazon|ec2-3-...compute-1.amazonaws.com|instances/1000000007492|05/31/19 21:26:35 UTC|
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Unregistered VMs
+
+This report lists VMs that are not registered to a Host, but have disks on a Datastore.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Datastore|Datastore Path|Size|Date Created|Date Updated|Annotation
+|se-net-util-lab-eng-bit63-net|data4|data4/4a5aee2e-510a-4a8a-92df-9f241e93266a.ovf||07/16/19 10:44:51 UTC|08/02/19 10:36:41 UTC|This VM is used by the Junipers to backup their switch configs upon commit
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - User Accounts - Linux
+
+This report lists user accounts discovered on Linux VMs.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all Linux VMs
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|User Name|User Comment|User Account ID|User Account Type
+|agrasil02|dbus|System message bus|81|user
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - User Accounts - Windows
+
+This report lists user accounts discovered on Windows VMs.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all Windows VMs
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|User Name|User Display Name|User Comment|User Enabled|User Expires|User Account ID|User Account Type|Account Lockout Duration|Account Lockout Threshold|Max Pwd Age|Min Pwd Age|Min Pwd Length|User Domain|User Local
+|env-win81-ie11|IEUser|||True|never|1001|user|30|0|42|0|0|||	
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Vendor and Guest OS
+
+This report lists Operating System names and versions found on each provider (i.e. vendor).
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "OS Name" column will only be populated if a SmartState Analysis has been run on the VM.
+* The "OS Product Name" column will display the full operating system name (e.g. "CentOS release 5.9 (Final)") if a SmartState Analysis has been run on the VM. Otherwise this column will display the VM's hardware operating system type used by the provider (e.g. "linux_centos").
+
+Notes
+
+* This report provides data for the "Vendor and Guest OS Chart" widget.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Container|OS Product Name|Name|OS Name
+|VMware|CentOS Linux release 7.6.1810 (Core)|oracle_db|oracledb.bit63.com
+|============================================================
+
+The report also generates a bar chart of guest operating systems (see <<i3>>)
+
+[[i3]]
+.Bar Chart of Guest Operating Systems
+image::images/screenshot3.png[Screenshot,600,align="center"]
+{zwsp} +
+
+'''
+===== REPORT - Vendor and Type
+
+This report lists VM hardware guest OS types found on each provider (i.e. vendor).
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Host Name|Container|Hardware Guest OS|Last Smart Analysis
+|Database-01|esx10.bit63.com|VMware|centos7_64|08/14/19 16:03:00 UTC
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VM Disk Usage
+
+This report lists VM disk usage over a time period for each VM.
+
+Prerequisites
+
+* This report uses data supplied by Capacity & Utilization, so these server roles must be enabled and running for several days to generate meaningful data.
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|VM Name|Activity Sample - Timestamp (Day/Time)|Derived Vm Allocated Disk Storage|Derived Vm Used Disk Storage
+|boot.sdh-ocp4.bit63.com|09/10/2019|50 GB|3,489,660,928.0
+|boot.sdh-ocp4.bit63.com|09/11/2019|50 GB|4,294,967,296.0
+|boot.sdh-ocp4.bit63.com|09/12/2019|50 GB|4,542,753,870.8
+|boot.sdh-ocp4.bit63.com|09/13/2019|50 GB|5,368,709,120.0
+|boot.sdh-ocp4.bit63.com|Count: 4|||
+|Minimums:||3,489,660,928.0|
+|Maximums:||5,368,709,120.0|
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VM Location and Size
+
+This report lists the host and datastore location of each VM, along with the total disk size.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "Size" column will only be populated if a SmartState Analysis has been run on the VM.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Host Name|Datastore|Datastore Path|Size|Date Created|Date Updated|Last Smart Analysis
+|big-ip-ve-emea|esx12.bit63.com|datastore12|datastore12/big-ip-ve-emea/big-ip-ve-emea.vmx|18.1 GB|08/14/19 15:03:53 UTC|08/14/19 15:52:06 UTC|08/14/19 15:56:57 UTC
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VMs by MAC Address
+
+This report lists the MAC addresses of each VM.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "Device Location" column data is taken from the Hardware.Network Adapters : Location database column, which seems to be rarely populated.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|MAC Address|Device Location|VM Name|Host Name|Datastore|Datastore Path
+|00:50:56:a5:03:b9||hrweb002|esx12.bit63.com|NFS_Datastore|NFS_Datastore/hrweb002/hriprdweb002.vmx
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VMs Snapshot Summary
+
+This report lists any VMs with snapshots, along with the snapshot details.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "Total Size" column will only be populated if a SmartState Analysis has been run on the VM.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Snapshot Name|Active Snapshot (0/1)|Description|Create Time|Total Size
+|tower-bit63-com|Active VM|1|Active VM|05/29/17 20:19:10 UTC|
+|tower-bit63-com|preupgrade|0|preupgrade|12/19/17 15:43:15 UTC|	
+|tower-bit63-com | Count: 2||||
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VMs w/Free Space > 75% by Function
+
+This report lists VMs with disks containing > 75% free space, sorted by function (workload).
+
+Prerequisites
+
+* VMs should be tagged with the "function (Workload)" category for this report to be meaningful.
+* A SmartState Analysis should have been run on all VMs for this report to contain valid volume data.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Function|Name|Parent Cluster|Storage Name|Volume Name|Volume Free Space Percent|Volume Free Space|Volume Size|Volume Used Space Percent|Volume Used Space|Volume Filesystem
+|Virtual Infrastructure Management|vCenter Server|V2_Cluster|datastore13|log|71.7%|7.2 GB|10 GB|28.3%|2.8 GB|Ext3
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VMs w/Free Space > 75% by LOB
+
+This report lists VMs with disks containing > 75% free space, sorted by line of business.
+
+Prerequisites
+
+* VMs should be tagged with the "lob (Line of Business)" category for this report to be meaningful.
+* A SmartState Analysis should have been run on all VMs for this report to contain valid volume data.
+
+Notes
+
+* There are no tags in the "lob" category by default. New tags should be created as appropriate for the business.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Line of Business|Name|Parent Cluster|Storage Name|Volume Name|Volume Free Space Percent|Volume Free Space|Volume Size|Volume Used Space Percent|Volume Used Space|Volume Filesystem
+|General Insurance|Database-01|V2_Cluster|datastore12|root|93.0%|12.5 GB|13.4 GB|7.0%|964.4 MB|XFS
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VMs with Free Space > 50% by Department
+
+This report lists VMs with disks containing > 50% free space, sorted by department.
+
+Prerequisites
+
+* VMs should be tagged with the "department (Department)" category for this report to be meaningful.
+* A SmartState Analysis should have been run on all VMs for this report to contain valid volume data.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Department Classification|Name|Parent Cluster|Storage Name|Volume Name|Volume Free Space Percent|Volume Free Space|Volume Size|Volume Used Space Percent|Volume Used Space|Volume Filesystem
+|Engineering|dev-windows-server-2012|V2_Cluster|iSCSI_Datastore|C:|79.2%|31.4 GB|39.7 GB|20.8%|8.2 GB|NTFS
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VMs with no UUID
+
+This report lists VMs with no BIOS UUID.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "OS Product Name" column will display the full operating system name (e.g. "Red Hat Enterprise Linux Server release 7.6 (Maipo)") if a SmartState Analysis has been run on the VM. Otherwise this column will display the VM's hardware operating system type used by the provider (e.g. "rhel_7x64" for RHV)
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|Host Name|Datastore|Datastore Path|OS Product Name|VM UUID
+|infra.cnv0.bit63.com|se-hyp06|data4|data4/effecb88-f081-4d19-8cfd-40314c0e4c54.ovf|rhel_7x64|	
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VMs with Volume Free Space <= 20%
+
+This report lists VMs with disks containing <= 20% free space.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all VMs for this report to contain valid volume data.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Parent Cluster|Storage Name|Volume Name|Volume Free Space Percent|Volume Free Space|Volume Size|Volume Used Space Percent|Volume Used Space|Volume Filesystem
+|oracle_db|||root|11.9%|2.1 GB|17.4 GB|88.1%|15.3 GB|XFS
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VMs with Volume Free Space >= 80%
+
+This report lists VMs with disks containing >= 80% free space.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all VMs for this report to contain valid volume data.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Parent Cluster|Storage Name|Volume Name|Volume Free Space Percent|Volume Free Space|Volume Size|Volume Used Space Percent|Volume Used Space|Volume Filesystem
+|env-win81-ie11|V2_Cluster|datastore12|C:|90.4%|114.5 GB|126.7 GB|9.6%|12.2 GB|NTFS
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - VM UUIDs
+
+This report lists VMs with their BIOS UUIDs.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "OS Product Name" column will display the full operating system name (e.g. "Red Hat Enterprise Linux Server release 7.6 (Maipo)") if a SmartState Analysis has been run on the VM. Otherwise this column will display the VM's hardware operating system type used by the provider (e.g. "Red Hat Enterprise Linux 7 (64-bit)" for VMware)
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|VM Name|VM UUID|OS Product Name
+|big-ip-ve-west|42250dcd-e16a-ca58-a67d-4fd816d3c2e0|Microsoft Windows Server 2008 R2 (64-bit)
+|============================================================
+{zwsp} +
+
+'''
+==== Instances
+
+The **Configuration Management/Instances** folder contains the following report:
+
+===== REPORT - Amazon - Active VMs
+
+This report lists all active Amazon instances.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Flavor Name|Cloud/Infrastructure Provider Name|Availability Zone Name|Security Group Name|Power State
+|pemcg-k8s|t2.large|e2e|us-east-1d|default|on
+|============================================================
+{zwsp} +
+
+'''
+==== Clusters
+
+The **Configuration Management/Clusters** folder contains the following reports:
+
+===== REPORT - Cluster Hosts Affinity
+
+This report shows the relationship between clusters and their hosts for each managed provider.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "Total CPU Speed" and "Total Memory" columns show the total resource values for the cluster and not the individual hosts
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Cluster|Host Hostname|Total CPU Speed|Total Memory
+|SysEng|se-hyp03.bit63.com|858.87 GHz|2.5 TB
+|SysEng|se-hyp04.bit63.com|858.87 GHz|2.5 TB
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Cluster Resources
+
+This report shows the total resources for each managed cluster.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Total Number of Physical CPUs|Total Number of Logical CPUs|Aggregate Vm Cpus|CPU Cores Virtual to Real Ratio|Total CPU Speed|Total Memory|Aggregate Vm Memory|Memory Virtual to Real Ratio
+|SysEng|48|448|344|0.80|858.87 GHz|2.5 TB|1.6 TB|0.70
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Cluster Summary
+
+This report produces a configuration and resource summary for each managed cluster.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Name|DRS Automation Level|DRS Enabled|DRS Migration Threshold|HA Admit Control|HA Enabled|HA Max Failures|Total CPU Speed|	Total Memory|Total Number of Logical CPUs|Total Number of Physical CPUs|Provider Name
+|V2_Cluster|fullyAutomated|False|3|True|False|1|76.61 GHz|255.6 GB|32|4|vCenter
+|SysEng|||||||858.87 GHz|2.5 TB|448|48|RHV
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Cluster VMs Affinity with Power State
+
+This report lists VMs associated with each host in a cluster, and their power state.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Cluster|Host Name|VM Name|VM Power State
+|V2_Cluster|esx12.bit63.com|james-db-03|off
+|============================================================
+{zwsp} +
+
+'''
+==== Storage
+
+The **Configuration Management/Storage** folder contains the following reports:
+
+===== REPORT - Datastore LUN Information
+
+This report lists the storage device LUNs that make up each datastore.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Datastore Name|LUN Canonical Name|LUN UUID|LUN Device Name|LUN ID|LUN Capacity|LUN Device Type|LUN Type|LUN Block|LUN Block Size
+|iSCSI_Datastore|naa.648171...||	/vmfs/devices/disks/naa.648171...|0|300 MB|disk|disk|600 MB|512
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Datastores Summary
+
+This report shows a summary of the datastores in each provider.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Datastore Name|Number of Hosts|Number of VMs|Total Space|Free Space|Type
+|data4|25|131|8 TB|2.1 TB|ISCSI
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Datastore Summary for Hosts
+
+This report shows a summary of the VMFS datastores and their host connectivity in each provider.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Datastore Name|Host Name|Store Type|Free Space|Total Space
+|datastore13|esx13.bit63.com|VMFS|153.6 GB|550.8 GB
+|datastore13|Count: 1|||
+|iSCSI_Datastore|esx12.bit63.com|VMFS|81.3 GB|299.8 GB
+|iSCSI_Datastore|esx13.bit63.com|VMFS|81.3 GB|299.8 GB
+|iSCSI_Datastore|Count: 2|||
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Datastore Summary for VMs
+
+This report lists the VMs residing on each datastore.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "VM Size" column will only be populated if a SmartState Analysis has been run on the VM.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Datastore|VM Name|VM Size|Datastore Size|Datastore Free Space|Datastore Type
+|datastore12|james-db-03|16 GB|550.8 GB|60.2 GB|VMFS
+|============================================================
+{zwsp} +
+
+'''
+==== Hosts
+
+The **Configuration Management/Hosts** folder contains the following reports:
+
+===== REPORT - Date brought under Management for Last Week
+
+This report lists any hosts (hypervisors) that have been added to the provider in the last week.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "VC User Name" column seems to refer to a host attribute that no longer exists, so this will be blank.
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|Hostname|Date Added|VC User Name
+|se-hyp30|se-hyp30.bit63.com|09/16/19 10:44:50 UTC|	
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Hardware Information
+
+This report lists the hardware information for each host (hypervisor).
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|IP Address|Hardware Manufacturer|Hardware CPU Type|Hardware Model|Hardware CPU Speed|Hardware Logical Cpus|Hardware Cores Per Socket|Hardware RAM|Hardware Number Of Nics|Serial Number
+|se-hyp06|10.2.3.4|Dell Inc.|Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz|PowerEdge M630|2.52 GHz|16|8|125.5 GB|16|8K4Y..
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Host - ESX Service Console Packages
+
+This report lists the service console packages found on each VMware ESX host.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all ESX hosts
+
+Notes
+
+* This report is only applicable to VMware ESX (not ESXi) host types
+
+.Report Heading
+[options="header",align="center"]
+|============================================================
+|Name|Guest Application Type Name|Guest Application Name|Guest Application Version|Guest Application Description|Guest Application Arch|Guest Application V Unique Name
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Host - ESX Services
+
+This report lists the services found on each VMware ESX host.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all VMware ESX and ESXi hosts
+
+Notes
+
+* This report is only applicable to VMware ESX and ESXi host types
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Name|Service Name|Service Display Name|Service Running
+|esx12.bit63.com|DCUI|Direct Console UI|True
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Host Network Information
+
+This report lists the networks found on each host (hypervisor).
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Name|Network IP Address|Network Subnet Mask|Network DHCP Enabled|Network DHCP Server|Network DNS Server|Network Default Gateway|Network Description|Network Domain|Network Lease Expires|Network Lease Obtained
+|esx12.bit63.com|10.2.3.4|255.255.255.128|False||||vmnic4|||		
+|esx12.bit63.com|172.31.2.12|255.255.0.0|False||||vmnic1|||		
+|esx12.bit63.com|192.168.49.12|255.255.255.0|False||||vmnic3|||
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Host Patches
+
+This report lists the patches found on each VMware ESX(i) host.
+
+Prerequisites
+
+* A SmartState Analysis should have been run on all ESX(i) hosts
+
+Notes
+
+* This report is only applicable to VMware ESX and ESXi host types
+
+.Report Heading
+[options="header",align="center"]
+|============================================================
+|Name|Patch Name|Patch Description|Patch Installed On
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Hosts Summary
+
+This report lists the software version of each host.
+
+Prerequisites
+
+* None
+
+Notes
+
+* This report provides data for the "Hosts - Summary by Version" widget.
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Host Name|Primary IP Address|VMM Vendor|VMM Product|VMM Version|VMM Build Number
+|esx13.bit63.com|10.2.3.5|VMware|ESXi|6.5.0|5969303
+|se-hyp22|10.19.8.2|RedHat|rhel|7.6|
+|============================================================
+
+The report also generates a bar chart of host software versions (see <<i5>>)
+
+[[i5]]
+.Bar Chart of Host Software Versions
+image::images/screenshot5.png[Screenshot,700,align="center"]
+
+{zwsp} +
+
+'''
+===== REPORT - Host Storage Adapters
+
+This report lists the storage adapters found on each host.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Host Name|IP Address|Storage Adapter Model|Storage Adapter Controller Type|Storage Adapter Device Name|Storage Adapter Device Type|Storage Adapter Location|Storage Adapter Iscsi Alias|Storage Adapter Iscsi Name|Storage Adapter Present|Storage Adapter Start Connected
+|esx12.bit63.com|10.2.3.4|Dell PERC H330 Mini (blade)||vmhba0|storage|0000:02:00.0|||True|True
+|esx12.bit63.com|10.2.3.4|Wellsburg AHCI Controller|Block|vmhba1|storage|0000:00:11.4|||True|True
+|esx12.bit63.com|10.2.3.4|iSCSI Software Adapter|iSCSI|vmhba64|storage|N/A||	iqn.1998-01.com.vmware:esx12-0734efc0|True|True
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Host Summary for VMs
+
+This report lists all hosts with their running VMs, along with placement and retirement details.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|IP Address|VM Name|VM OS Name|Power State|Parent Datacenter|Parent Folder|Parent Resource Pool|VM is a Template|Retired?|VM Retires On
+|esx12.bit63.com|10.2.3.4|big-ip-ve-east|windows_generic|V2-DC|Datacenters|Default for Cluster / Deployment Role|V2_Cluster|False||
+|...||||||||||
+|esx12.bit63.com|Count: 109|||||||||
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Host Summary with VM info
+
+This report lists all hosts with their running VMs, along with configuration details.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Row
+[options="header",align="center"]
+|============================================================
+|Host Name|Name|Power State|Hardware Number of Virtual CPUs|Hardware RAM
+|esx12.bit63.com|env-win2016-tpl|on|1|8 GB
+|...||||
+|esx12.bit63.com|Count: 109|||
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Host vLANs and vSwitches
+
+This report lists all hosts with their vLANs and vSwitches.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Name|Hostname|vLAN Name|vLAN Tag|vSwitch Name|vSwitch Ports|Provider Name
+|esx12.bit63.com|esx12.bit63.com|VM_10G_Network|209|vDS-1|120|vCenter
+|se-hyp01|se-hyp1.bit63.com|e2e|183|ovirtmgmt||RHV
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Host VM Relationships
+
+This report lists all hosts with their VMs and storage requirements.
+
+Prerequisites
+
+* None
+
+Notes
+
+* The "Size" column will only be populated if a SmartState Analysis has been run on the VM.
+* The "Power State" column relies on a VM being tagged with managed/power_state, otherwise this column is empty.
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Host|VM Name|RAM|Size|Power State
+|esx12.bit63|Database-01|2 GB|57 GB|
+|...||||
+|esx12.bit63.com|Count: 109|||||
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Recently Added Hosts
+
+This report lists all hosts with the date of their discovery by CloudForms, with the most recently added first.
+
+Prerequisites
+
+* None
+
+.Report Heading and Sample Rows
+[options="header",align="center"]
+|============================================================
+|Name|Date Created|Hostname|Vmm Vendor Display|Href Slug
+|esx12.bit63.com|04/09/19 11:55:06 UTC|esx12.bit63.com|VMware|hosts/2
+|============================================================
+{zwsp} +
+
+'''
+===== REPORT - Virtual Infrastructure Platforms
+
+==== VM Folders
+
+The **Configuration Management/VM Folders** folder contains the following reports:
+
+===== REPORT - Folder VMs Relationships
+
+==== Containers
+
+The **Configuration Management/Containers** folder contains the following reports:
+
+===== REPORT - Images by Failed OpenSCAP Rule Results
+
+===== REPORT - Nodes By Capacity
+
+===== REPORT - Nodes By CPU Usage
+
+===== REPORT - Nodes By Memory Usage
+
+===== REPORT - Nodes by Number of CPU Cores
+
+===== REPORT - Number of Images per Node
+
+===== REPORT - Pod Counts For Container Images by Project
+
+===== REPORT - Pods per Ready Status
+
+===== REPORT - Projects By CPU Usage
+
+===== REPORT - Projects By Memory Usage
+
+===== REPORT - Projects by Number of Containers
+
+===== REPORT - Projects by Number of Pods
+
+===== REPORT - Projects by Quota Items
+
+===== REPORT - Recently Discovered Pods
+
+==== Providers
+
+The **Configuration Management/Providers** folder contains the following reports:
+
+===== REPORT - Monthly Host Count per Provider
+
+===== REPORT - Monthly VM Count per Provider
+
+===== REPORT - Providers Host Relationships
+
+===== REPORT - Providers Summary
+
+===== REPORT - Providers VMs Relationships
+
+==== Physical Servers
+
+The **Configuration Management/Physical Servers** folder contains the following reports:
+
+===== REPORT - Physical Server Availability
+
+===== REPORT - Physical Server Health
+
+===== REPORT - Recently Discovered Physical Servers
+
+==== Resource Pools
+
+The **Configuration Management/Resource Pools** folder contains the following report:
+
+===== REPORT - Resource Pools Summary
+
+=== Performance by Asset Type
+
+The **Performance by Asset Type** folder contains reports for the following categories of object:
+
+==== Virtual Machines
+
+The **Performance by Asset Type/Virtual Machines** folder contains the following reports:
+
+===== REPORT - All Departments with Performance
+
+===== REPORT - Host CPU Usage per VM
+
+===== REPORT - Top CPU Consumers (weekly)
+
+===== REPORT - Top Memory Consumers (weekly)
+
+===== REPORT - Top Storage Consumers
+
+===== REPORT - VM Performance - daily over the last week
+
+===== REPORT - VM Resource Utilization
+
+===== REPORT - VMs with Avg Daily CPU > 85% (past mo.)
+
+===== REPORT - VMs with Avg Daily Mem < 50% (past mo.)
+
+===== REPORT - VMs with Avg Daily Mem > 95% (past mo.)
+
+===== REPORT - VMs with Avg Daily CPU > 85% (past mo.)
+
+===== REPORT - VMs with Avg Daily Mem > 50% (past mo.)
+
+===== REPORT - Weekly Utilization Overview
+
+==== Clusters
+
+The **Performance by Asset Type/Clusters** folder contains the following report:
+
+===== REPORT - Cluster Memory and CPU Usage (7 days)
+
+=== Trending
+
+The **Trending** report category contains reports
+
+The folder contains reports for the following categories of object:
+
+==== Clusters
+
+The **Trending/Clusters** folder contains the following reports:
+
+===== REPORT - Cluster CPU Trends (last week)
+
+===== REPORT - Cluster I/O Trends (last week)
+
+===== REPORT - Cluster memory trend 6 months
+
+===== REPORT - Cluster Memory Trends (last week)
+
+===== Storage
+
+The **Trending/Storage** folder contains the following report:
+
+===== REPORT - Datastore Capacity Trend over 6 mos.
+
+===== Hosts
+
+The **Trending/Hosts** folder contains the following reports:
+
+===== REPORT - Host CPU Trends (last week)
+
+===== REPORT - Host I/O Trends (last week)
+
+===== REPORT - Host Memory Trends (last week)
+
+===== REPORT - Host Peak CPU Used Trend over 6 mos.
+
+===== REPORT - Host Peak Memory Used Trends for 6 mos.
+
+=== Operations
+
+The **Operations** folder contains reports for the following categories of object:
+
+==== Clusters
+
+The **Operations/Clusters** folder contains the following report:
+
+===== REPORT - Cluster - DRS Migrations
+
+==== EVM
+
+The **Operations/EVM** folder contains the following reports:
+
+===== REPORT - EVM Server Used IDs Never Used
+
+===== REPORT - EVM Server UserID Usage Report
+
+===== REPORT - VMs with Consolidate Helper Snapshots
+
+===== REPORT - VMs with EVM Snapshots
+
+==== Virtual Machines
+
+The **Operations/Virtual Machines** folder contains the following reports:
+
+===== REPORT - Offline VMs Never Scanned
+
+===== REPORT - Offline VMs with Snapshot
+
+===== REPORT - Online VMs (Powered On)
+
+===== REPORT - Registered VMs by Free Space
+
+===== REPORT - Registered VMs with Free Space <35%
+
+===== REPORT - Unregistered VMs Free Space <35%
+
+===== REPORT - VMs not Powered On
+
+===== REPORT - VMs with old VMware tools
+
+===== REPORT - VMs without VMware tools
+
+===== REPORT - VMware Tools Versions
+
+==== Events
+
+The **Operations/Events** folder contains the following report:
+
+===== REPORT - VC Snapshot Events by User
+
+=== Relationships
+
+The **Relationships** folder contains reports for the following categories of object:
+
+==== Virtual Machines, Folders, Clusters
+
+The **Relationships/Virtual Machines, Folders, Clusters** folder contains the following reports:
+
+===== REPORT - Cluster Relationships
+
+===== REPORT - Folder to VMs Relationships
+
+===== REPORT - VM Relationships
+
+=== Migration Readiness
+
+The **Migration Readiness** folder contains reports for the following categories of object:
+
+==== Virtual Machines
+
+The **Migration Readiness/Virtual Machines** folder contains the following reports:
+
+===== REPORT - Detailed - VMs migration ready
+
+===== REPORT - Detailed - VMs NOT migration ready
+
+===== REPORT - Summary - VMs migration ready
+
+===== REPORT - Summary - VMs NOT migration ready
+
+=== Events
+
+The **Events** folder contains reports for the following categories of object:
+
+==== Operations
+
+The **Events/Operations** folder contains the following reports:
+
+===== REPORT - Events for VM prod_webserver
+
+===== REPORT - Operations VMs Powered On/Off for Last Week
+
+===== REPORT - Reconfigure Events by Department
+
+===== REPORT - VC Events initiated by username EVM86
+
+=== Policy
+
+The **Events/Policy** folder contains the following reports:
+
+===== REPORT - Policy Events for Last Week
+
+===== REPORT - Policy Events for the Last 7 Days
+
+=== Running Processes
+
+The **Running Processes** folder contains reports for the following categories of object:
+
+==== Virtual Machines
+
+The **Running Processes/Virtual Machines** folder contains the following report:
+
+===== REPORT - Processes for prod VMs sort by CPU Time
+
+=== Provisioning
+
+The **Provisioning** folder contains reports related to VM provisioning activity. It contains a single subfolder.
+
+==== Activity Reports
+
+The **Provisioning/Activity Reports** folder contains the following reports:
+
+===== REPORT - Provisioning Activity - by Approver
+
+===== REPORT - Provisioning Activity - by Datastore
+
+===== REPORT - Provisioning Activity - by Requester
+
+===== REPORT - Provisioning Activity - by VM
+
+=== VM Sprawl
+
+The **VM Sprawl** folder contains reports. It contains a single subfolder.
+
+==== Candidates
+
+The **VM Sprawl/Candidates** folder contains the following reports:
+
+===== REPORT - Summary of VM Create and Deletes
+
+===== REPORT - VMs pending Retirement
+
+===== REPORT - VMs Powered Off registered to a Host
+
+===== REPORT - VMs that are retired
+
+===== REPORT - VMs with disk free space > 5GB
+
+===== REPORT - VMs with invalid allocation of RAM
+
+===== REPORT - VMs with Volume Free Space >= 75%
+
+===== REPORT - VM Uptime - longest running
+
+=== Tenants
+
+The **Tenants** folder contains a single subfolder
+
+==== Tenant Quotas
+
+The **Tenants/Tenant Quotas** folder contains the following report:
+
+===== REPORT - Tenant Quotas
+
+
+
+
+
