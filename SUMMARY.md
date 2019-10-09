@@ -3,7 +3,7 @@
 * [Preface](preface.asciidoc)
 * [Reports Introduction](reports_introduction/chapter.asciidoc)
 * [Included Reports](included_reports/master_chapter.asciidoc)
-  * [Configuration Management](configuration_management/chapter.asciidoc)
+  * [Configuration Management](included_reports/configuration_management/chapter.asciidoc)
   * [Performance by Asset Type](performance_by_asset_type/chapter.asciidoc)
 * [Editing and Creating Reports](editing_and_creating_reports/chapter.asciidoc)
 * [Dashboard Widgets](dashboard_widgets/chapter.asciidoc)
