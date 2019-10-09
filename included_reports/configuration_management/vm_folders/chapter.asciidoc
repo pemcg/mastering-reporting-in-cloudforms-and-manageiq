@@ -5,7 +5,7 @@ The **Configuration Management/VM Folders** folder contains the following report
 
 === VMs Relationships
 
-This report list each VM with its parent folder path.
+This report list the relationships between virtual infrastructure folders and VMs, sorted by parent folder path name.
 
 Prerequisites
 

@@ -6,7 +6,7 @@ The **Configuration Management/Virtual Machines** folder contains the following 
 
 === Account Groups - Linux
 
-This report list the account groups found in each Linux VM.
+This report list the account groups found on each Linux VM.
 
 Prerequisites
 
@@ -23,7 +23,7 @@ Prerequisites
 '''
 === Account Groups - Windows
 
-This report list the account groups found in each Linux VM.
+This report list the account groups found on each Windows VM.
 
 Prerequisites
 
@@ -39,7 +39,7 @@ Prerequisites
 
 '''
 === Guest OS HKLM Registry Information
-This report lists the Windows VM registry data found by SmartState Analysis.
+This report lists the Windows VM HKLM registry data found by SmartState Analysis.
 
 Prerequisites
 
@@ -56,7 +56,7 @@ Prerequisites
 '''
 === Guest OS Information - any OS
 
-This report lists the guest operating systems discovered on managed VMs.
+This report lists the guest operating system detected on each VM.
 
 Prerequisites
 
@@ -83,7 +83,7 @@ image::images/screenshot2.png[Screenshot,500,align="center"]
 '''
 === Guest OS Information - Linux
 
-This report lists the guest operating systems discovered on managed Linux VMs.
+This report lists the guest operating system product name detected on each Linux VM.
 
 Prerequisites
 
@@ -100,7 +100,7 @@ Prerequisites
 '''
 === Guest OS Information - Windows
 
-This report lists the guest operating systems discovered on managed Windows VMs.
+This report lists the guest operating system name and version detected on each Windows VM.
 
 Prerequisites
 
@@ -117,7 +117,7 @@ Prerequisites
 '''
 === Guest OS Password Information - Windows
 
-This report lists the password settings for all managed Windows VMs.
+This report lists the password settings for all Windows VMs.
 
 Prerequisites
 
@@ -134,7 +134,7 @@ Prerequisites
 '''
 === Hardware Information for VMs
 
-This report lists the hardware for all managed VMs and Instances.
+This report lists the hardware for all VMs and Instances.
 
 Prerequisites
 
@@ -168,7 +168,7 @@ Prerequisites
 '''
 === Recently Discovered VMs
 
-This report lists managed VMs and Instances sorted in descending order of creation date.
+This report lists VMs and Instances sorted by creation date.
 
 Prerequisites
 
@@ -240,7 +240,7 @@ Prerequisites
 '''
 === Vendor and Guest OS
 
-This report lists Operating System names and versions found on each provider (i.e. vendor).
+This report lists operating system names and versions found on each provider (i.e. vendor).
 
 Prerequisites
 
@@ -272,7 +272,7 @@ image::images/screenshot3.png[Screenshot,600,align="center"]
 '''
 === Vendor and Type
 
-This report lists VM hardware guest OS types found on each provider (i.e. vendor).
+This report lists VM hardware guest operating system types found on each provider (i.e. vendor).
 
 Prerequisites
 

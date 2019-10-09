@@ -268,7 +268,7 @@ Prerequisites
 '''
 === Virtual Infrastructure Platforms
 
-This report lists the hosts but virtual infrastructure platform type.
+This report lists all hosts sorted by virtual infrastructure platform type.
 
 Prerequisites
 
